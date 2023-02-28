@@ -3,32 +3,27 @@
 #   @date : 28 February 2023
 #   @authors : Orel Adivi and Daniel Noor
 #
-from codes.Code import Code
+from overrides import overrides
 import numpy as np
+
+from codes.Code import Code
 
 
 class RandomCode(Code):
-    def __init__(self, n=20):
-        super().__init__(n)
-        for i in range(0, int(np.ceil(np.log2(n)))):
-            codeword = np.random.choice([0, 1], size=n)
-            while self.arr_to_str(codeword) in self.code:
-                codeword = np.random.choice([0, 1], size=n)
+    @overrides
+    def __init__(self, length=20):
+        words = int(np.ceil(np.log2(length)))
+        super().__init__(length, words)
+        for i in range(0, words):
+            codeword = np.random.choice([0, 1], size=length)
+            while Code._codeword_as_str(codeword) in self.codewords:
+                codeword = np.random.choice([0, 1], size=length)
 
-            self.code.append(self.arr_to_str(codeword))
-
-    def encode(self, value: int):
-        pass
-
-    def decode(self, codeword: str):
-        pass
-
-    @staticmethod
-    def arr_to_str(codeword: np.ndarray):
-        return "".join([str(x) for x in codeword])
+            self._insert_codeword(i, Code._codeword_as_str(codeword))
 
 
 if __name__ == "__main__":
     r = RandomCode(100)
-    print(r.code)
-    print(r.number_of_deletions())
+    print(r.codewords)
+    print(r.max_deletions())
+    print(r.decode(r.mapping[3][0:80]))

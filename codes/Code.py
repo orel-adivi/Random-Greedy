@@ -3,23 +3,44 @@
 #   @date : 28 February 2023
 #   @authors : Orel Adivi and Daniel Noor
 #
-from abc import ABC, abstractmethod
+import numpy as np
 import itertools
-from utils.LongestCommonSubsequence import longest_common_subseq
+from abc import ABC, abstractmethod
+
+from utils.LevenshteinDistance import levenshtein_deletion_distance
+from utils.LongestCommonSubsequence import longest_common_subsequence
 
 
 class Code(ABC):
-    def __init__(self, n=20):
-        self.n = n
-        self.code = []
+
+    @staticmethod
+    def _codeword_as_str(codeword: np.ndarray) -> str:
+        return ''.join([str(x) for x in codeword])
+
+    def _insert_codeword(self, value: int, codeword: str) -> None:
+        assert 0 <= value < self.words
+        assert value not in self.mapping.keys()
+        assert codeword not in self.codewords
+        self.codewords.add(codeword)
+        self.mapping[value] = codeword
 
     @abstractmethod
-    def encode(self, value: int):
-        pass
+    def __init__(self, length: int, words: int):
+        self.length = length
+        self.words = words
+        assert 1 <= words <= length
+        self.codewords = set()
+        self.mapping = {}
 
-    @abstractmethod
-    def decode(self, codeword: str):
-        pass
+    def encode(self, value: int) -> str:
+        assert 0 <= value < self.words
+        return self.mapping[value]
 
-    def number_of_deletions(self):
-        return self.n - max([longest_common_subseq(w1, w2) for w1, w2 in itertools.combinations(self.code, 2)])
+    def decode(self, word: str) -> int:
+        assert len(word) <= self.length
+        distances = [levenshtein_deletion_distance(codeword, word) for codeword in self.mapping.values()]
+        return min(self.mapping.keys(), key=distances.__getitem__)
+
+    def max_deletions(self) -> int:
+        return self.length - max(map(lambda words: longest_common_subsequence(words[0], words[1]),
+                                     itertools.combinations(self.codewords, 2)))

@@ -6,7 +6,7 @@
 import numpy as np
 
 
-def longest_common_subseq(w1: str, w2: str):
+def longest_common_subsequence(w1: str, w2: str):
     dims = (len(w1) + 1, len(w2) + 1)
     dp_matrix = np.zeros(dims, dtype=np.int64)
     for i1 in range(1, dims[0]):
@@ -22,5 +22,5 @@ def longest_common_subseq(w1: str, w2: str):
 
 
 if __name__ == "__main__":
-    print(longest_common_subseq("111", "000"))
-    print(longest_common_subseq("10101", "10010"))
+    print(longest_common_subsequence("111", "000"))
+    print(longest_common_subsequence("10101", "10010"))
