@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 import itertools
-from Evaluations.LongestCommonSubseq import longest_common_subseq
+from utils.LongestCommonSubseq import longest_common_subseq
 
 
 class Code(ABC):

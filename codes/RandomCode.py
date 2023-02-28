@@ -1,4 +1,4 @@
-from Generators.Code import Code
+from codes.Code import Code
 import numpy as np
 
 
