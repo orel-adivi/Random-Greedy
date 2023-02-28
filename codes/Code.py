@@ -1,6 +1,11 @@
+#
+#   @file : Code.py
+#   @date : 28 February 2023
+#   @authors : Orel Adivi and Daniel Noor
+#
 from abc import ABC, abstractmethod
 import itertools
-from utils.LongestCommonSubseq import longest_common_subseq
+from utils.LongestCommonSubsequence import longest_common_subseq
 
 
 class Code(ABC):

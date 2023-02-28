@@ -1,3 +1,8 @@
+#
+#   @file : RandomCode.py
+#   @date : 28 February 2023
+#   @authors : Orel Adivi and Daniel Noor
+#
 from codes.Code import Code
 import numpy as np
 
