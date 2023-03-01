@@ -18,7 +18,6 @@ class RandomCode(Code):
             codeword = np.random.choice([0, 1], size=length)
             while Code._codeword_as_str(codeword) in self.codewords:
                 codeword = np.random.choice([0, 1], size=length)
-
             self._insert_codeword(i, Code._codeword_as_str(codeword))
 
 
