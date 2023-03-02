@@ -15,8 +15,8 @@ class LinSpaceCode(Code):
         words = int(np.ceil(np.log2(length)))
         super().__init__(length, words)
         self._insert_codeword(0, '0' * self.length)
-        self._insert_codeword(words-1, '1' * self.length)
-        for i, j in zip(range(1, words-1), np.linspace(1, self.length/2, num=words-2)):
+        self._insert_codeword(1, '1' * self.length)
+        for i, j in zip(range(2, words), np.linspace(1, self.length/2, num=words-2)):
             codeword = (self.length * ('0' * int(j) + '1' * int(j)))[0:self.length]
             self._insert_codeword(i, codeword)
 
