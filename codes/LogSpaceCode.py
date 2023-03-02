@@ -14,7 +14,7 @@ class LogSpaceCode(Code):
     def __init__(self, length=20):
         words = int(np.ceil(np.log2(length)))
         super().__init__(length, words)
-        for i, j in zip(range(0, words), np.logspace(0, np.log2(self.length), num=words - 2, base=2)):
+        for i, j in zip(range(0, words), np.logspace(0, np.log2(self.length), num=words, base=2)):
             codeword = (self.length * ('0' * int(j) + '1' * int(j)))[0:self.length]
             self._insert_codeword(i, codeword)
 
