@@ -43,4 +43,4 @@ class Code(ABC):
 
     def max_deletions(self) -> int:
         return self.length - max(map(lambda words: longest_common_subsequence(words[0], words[1]),
-                                     itertools.combinations(self.codewords, 2)))
+                                     itertools.combinations(self.codewords, 2))) - 1
