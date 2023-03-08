@@ -25,7 +25,7 @@ class LogSpaceCode(Code):
 
 
 if __name__ == "__main__":
-    r = LogSpaceCode(500)
+    r = LogSpaceCode(100)
     print(r.codewords)
     print(r.max_deletions())
     print(r.decode(r.mapping[3][0:75]))

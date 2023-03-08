@@ -12,7 +12,8 @@ from codes.Code import Code
 class RandomCode(Code):
     @overrides
     def __init__(self, length=20):
-        words = int(np.ceil(np.log2(length)))
+        # words = int(np.ceil(np.log2(length)))
+        words = length
         super().__init__(length, words)
         for i in range(0, words):
             codeword = np.random.choice([0, 1], size=length)
