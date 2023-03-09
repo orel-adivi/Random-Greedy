@@ -29,7 +29,7 @@ class RandomCode(Code):
 
 
 if __name__ == "__main__":
-    r = RandomCode(128)
+    r = RandomCode(400)
     print(r.codewords)
     print(r.max_deletions())
     print(r.decode(r.mapping[3][0:80]))

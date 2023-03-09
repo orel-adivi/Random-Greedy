@@ -5,10 +5,10 @@
 #
 import numpy as np
 import itertools
+import pylcs
 from abc import ABC, abstractmethod
 
 from utils.LevenshteinDistance import levenshtein_deletion_distance
-from utils.LongestCommonSubsequence import longest_common_subsequence
 
 
 class Code(ABC):
@@ -42,5 +42,5 @@ class Code(ABC):
         return min(self.mapping.keys(), key=distances.__getitem__)
 
     def max_deletions(self) -> int:
-        return self.length - max(map(lambda words: longest_common_subsequence(words[0], words[1]),
+        return self.length - max(map(lambda words: pylcs.lcs_sequence_length(words[0], words[1]),
                                      itertools.combinations(self.codewords, 2))) - 1
