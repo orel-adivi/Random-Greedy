@@ -5,6 +5,7 @@
 #
 from overrides import overrides
 import numpy as np
+from timeit import timeit
 
 from codes.Code import Code
 
@@ -23,7 +24,7 @@ class RandomCode(Code):
 
 
 if __name__ == "__main__":
-    r = RandomCode(100)
-    print(r.codewords)
-    print(r.max_deletions())
-    print(r.decode(r.mapping[3][0:80]))
+    r = RandomCode(200)
+    # print(r.codewords)
+    print(timeit(lambda: print(r.max_deletions()), number=1))
+    print(timeit(lambda: print(r.max_deletions_old()), number=1))

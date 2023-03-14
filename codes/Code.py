@@ -41,6 +41,37 @@ class Code(ABC):
         distances = [levenshtein_deletion_distance(codeword, word) for codeword in self.mapping.values()]
         return min(self.mapping.keys(), key=distances.__getitem__)
 
+    def max_deletions_old(self) -> int:
+        sorted_words = sorted(self.codewords, key=lambda x: x.count('1'))
+        max_lcs = 0
+        sorted_counts = [x.count('1') for x in sorted_words]
+        for i, w1 in enumerate(sorted_words):
+            for j, w2 in enumerate(sorted_words[0:i]):
+                if min(sorted_counts[i], sorted_counts[j]) \
+                        + min(self.length - sorted_counts[i], self.length - sorted_counts[j]) <= max_lcs:
+                    continue
+                lcs = pylcs.lcs_sequence_length(w1, w2)
+                if lcs > max_lcs:
+                    max_lcs = lcs
+        return self.length - max_lcs - 1
+
     def max_deletions(self) -> int:
-        return self.length - max(map(lambda words: pylcs.lcs_sequence_length(words[0], words[1]),
-                                     itertools.combinations(self.codewords, 2))) - 1
+        sorted_words = sorted(self.codewords, key=lambda x: x.count('1'))
+        max_lcs = 0
+        sorted_counts = [x.count('1') for x in sorted_words]
+        for i, w1 in enumerate(sorted_words):
+            for j, w2 in enumerate(sorted_words[0:i]):
+                if min(sorted_counts[i], sorted_counts[j]) \
+                        + min(self.length - sorted_counts[i], self.length - sorted_counts[j]) <= max_lcs:
+                    break
+                lcs = pylcs.lcs_sequence_length(w1, w2)
+                if lcs > max_lcs:
+                    max_lcs = lcs
+            for j, w2 in enumerate(sorted_words[i-1:-1:-1]):
+                if min(sorted_counts[i], sorted_counts[j]) \
+                        + min(self.length - sorted_counts[i], self.length - sorted_counts[j]) <= max_lcs:
+                    break
+                lcs = pylcs.lcs_sequence_length(w1, w2)
+                if lcs > max_lcs:
+                    max_lcs = lcs
+        return self.length - max_lcs - 1
