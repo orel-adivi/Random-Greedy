@@ -26,5 +26,4 @@ class RandomCode(Code):
 if __name__ == "__main__":
     r = RandomCode(200)
     # print(r.codewords)
-    print(timeit(lambda: print(r.max_deletions()), number=1))
-    print(timeit(lambda: print(r.max_deletions_old()), number=1))
+    print(r.max_deletions())
