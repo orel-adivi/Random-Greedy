@@ -12,7 +12,7 @@ from codes.Code import Code
 class SimpleGreedyCode(Code):
     @overrides
     def __init__(self, length=20):
-        words = int(np.ceil(np.log2(length)))
+        words = length
         super().__init__(length, words)
         self._insert_codeword(0, '0' * self.length)
         for i in range(1, words):

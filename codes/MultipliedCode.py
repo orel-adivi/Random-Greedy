@@ -26,6 +26,6 @@ class MultipliedCode(Code):
 
 
 if __name__ == "__main__":
-    r = MultipliedCode(2000)
+    r = MultipliedCode(400)
     # print(r.codewords)
     print(r.max_deletions())

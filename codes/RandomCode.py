@@ -13,7 +13,6 @@ from codes.Code import Code
 class RandomCode(Code):
     @overrides
     def __init__(self, length=20):
-        # words = int(np.ceil(np.log2(length)))
         words = length
         super().__init__(length, words)
         for i in range(0, words):
@@ -24,6 +23,6 @@ class RandomCode(Code):
 
 
 if __name__ == "__main__":
-    r = RandomCode(200)
-    # print(r.codewords)
+    r = RandomCode(400)
+    print(r.codewords)
     print(r.max_deletions())
