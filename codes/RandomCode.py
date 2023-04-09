@@ -5,7 +5,6 @@
 #
 from overrides import overrides
 import numpy as np
-from timeit import timeit
 
 from codes.Code import Code
 

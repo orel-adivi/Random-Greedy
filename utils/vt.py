@@ -1,3 +1,8 @@
+#
+#   Originally from https://github.com/shubhamchandak94/VT_codes/
+#   released under MIT license
+#
+
 import numpy as np
 
 class VTCode:

@@ -4,7 +4,6 @@
 #   @authors : Orel Adivi and Daniel Noor
 #
 import numpy as np
-import itertools
 import pylcs
 from abc import ABC, abstractmethod
 
