@@ -1,5 +1,5 @@
 #
-#   @file : VTMultiplied.py
+#   @file : VTRepetitionCode.py
 #   @date : 19 March 2023
 #   @authors : Orel Adivi and Daniel Noor
 #
@@ -10,7 +10,7 @@ from utils import vt
 from codes.Code import Code
 
 
-class VTMultiplied(Code):
+class VTRepetitionCode(Code):
     @overrides
     def __init__(self, length=20, m=5):
         words = length
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     l = 400
     log_l = int(np.ceil(np.log2(l)))
     m = log_l + int(np.ceil(np.log2(log_l))) + 1
-    r = VTMultiplied(l, m)
+    r = VTRepetitionCode(l, m)
     print(len(r.codewords))
     print(r.max_deletions())
 

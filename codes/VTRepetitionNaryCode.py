@@ -1,5 +1,5 @@
 #
-#   @file : VTNonBinaryMultiplied.py
+#   @file : VTRepetitionNaryCode.py
 #   @date : 20 March 2023
 #   @authors : Orel Adivi and Daniel Noor
 #
@@ -10,7 +10,7 @@ from utils import vt
 from codes.Code import Code
 
 
-class VTNonBinaryMultiplied(Code):
+class VTRepetitionNaryCode(Code):
     @overrides
     def __init__(self, length=100, m=9, q=4):
         words = length
@@ -34,10 +34,10 @@ class VTNonBinaryMultiplied(Code):
 
 
 if __name__ == "__main__":
-    l = 100
+    l = 400
     log_l = int(np.ceil(np.log2(l)))
     m = log_l + int(np.ceil(np.log2(log_l))) + 1
-    r = VTNonBinaryMultiplied(l, m)
+    r = VTRepetitionNaryCode(l, m)
     print(len(r.codewords))
     print(r.max_deletions())
 

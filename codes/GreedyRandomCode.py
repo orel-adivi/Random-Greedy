@@ -1,6 +1,6 @@
 #
 #   @file : GreedyRandomCode.py
-#   @date : 2 March 2023
+#   @date : 9 April 2023
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -29,7 +29,6 @@ class GreedyRandomCode(Code):
 
 
 if __name__ == "__main__":
-    r = GreedyRandomCode(1000)
+    r = GreedyRandomCode(400)
     print(r.codewords)
     print(r.max_deletions())
-    print(r.decode(r.mapping[3][0:80]))

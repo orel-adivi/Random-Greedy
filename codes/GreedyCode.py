@@ -1,5 +1,5 @@
 #
-#   @file : SimpleGreedyCode.py
+#   @file : GreedyCode.py
 #   @date : 1 March 2023
 #   @authors : Orel Adivi and Daniel Noor
 #
@@ -9,7 +9,7 @@ import numpy as np
 from codes.Code import Code
 
 
-class SimpleGreedyCode(Code):
+class GreedyCode(Code):
     @overrides
     def __init__(self, length=20):
         words = length
@@ -32,7 +32,6 @@ class SimpleGreedyCode(Code):
 
 
 if __name__ == "__main__":
-    r = SimpleGreedyCode(100)
+    r = GreedyCode(200)
     print(r.codewords)
     print(r.max_deletions())
-    print(r.decode(r.mapping[3][0:80]))
