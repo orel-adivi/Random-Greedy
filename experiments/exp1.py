@@ -6,7 +6,7 @@ import timeit
 import numpy as np
 
 from codes.GreedyCode import GreedyCode
-from codes.GreedyRandomCode import GreedyRandomCode
+from codes.RandomGreedyCode import GreedyRandomCode
 from codes.LinSpaceCode import LinSpaceCode
 from codes.LogSpaceCode import LogSpaceCode
 from codes.RandomCode import RandomCode

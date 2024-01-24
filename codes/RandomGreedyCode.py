@@ -1,5 +1,5 @@
 #
-#   @file : GreedyRandomCode.py
+#   @file : RandomGreedyCode.py
 #   @date : 24 January 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
@@ -29,6 +29,6 @@ class GreedyRandomCode(Code):
 
 
 if __name__ == "__main__":
-    r = GreedyRandomCode(400)
+    r = GreedyRandomCode(400, options=3)
     print(r.codewords)
     print(r.max_deletions())

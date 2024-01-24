@@ -14,7 +14,7 @@ if __name__ == "__main__":
     plt.plot(x, y2, label='VT Repetition Code')
     plt.plot(x, y3, label='N-ary VT Repetition Code')
     plt.plot(x, y4, label='Random Code')
-    plt.plot(x, y5, label='Greedy Random Code')
+    plt.plot(x, y5, label='Random/Greedy Code')
     plt.title("Deletion Correction Capabilities of Different Codes")
     plt.xlabel("Code Length [bit]")
     plt.ylabel("Maximum Number of Fixable Deletions [bit]")
