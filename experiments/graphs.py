@@ -1,3 +1,4 @@
+# todo: delete
 import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
@@ -19,4 +20,4 @@ if __name__ == "__main__":
     plt.ylabel("Maximum Number of Fixable Deletions [bit]")
     plt.legend()
     plt.grid()
-    plt.savefig("graph.png")
+    plt.savefig("artifacts/graph.png")

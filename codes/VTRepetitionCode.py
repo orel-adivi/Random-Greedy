@@ -1,11 +1,11 @@
 #
 #   @file : VTRepetitionCode.py
-#   @date : 19 March 2023
+#   @date : 24 January 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
 import numpy as np
-from utils import vt
+from utils import VTCode
 
 from codes.Code import Code
 
@@ -16,7 +16,7 @@ class VTRepetitionCode(Code):
         words = length
         super().__init__(length, words)
         self.width = m
-        vt_code = vt.VTCode(self.width, 2)
+        vt_code = VTCode.VTCode(self.width, 2)
         count = min(np.power(2, vt_code.k), words)
         for i in range(count):
             codeword = np.array(list(np.binary_repr(i).zfill(vt_code.k))).astype(np.int8)

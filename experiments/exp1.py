@@ -1,3 +1,4 @@
+# todo: delete
 import timeit
 
 # import matplotlib.pyplot as plt
@@ -45,4 +46,3 @@ if __name__ == "__main__":
     print(y5)
     y6 = [calculate_max_deletions(lambda: GreedyCode(length)) for length in range(100, 600, 100)]
     print(y6)
-
