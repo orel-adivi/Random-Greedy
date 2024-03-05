@@ -1,6 +1,6 @@
 #
 #   @file : LongestCommonSubsequence.py
-#   @date : 24 January 2024
+#   @date : 05 March 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 import numpy as np
@@ -19,8 +19,3 @@ def longest_common_subsequence(w1: str, w2: str):
                     dp_matrix[i1-1][i2]
                 )
     return dp_matrix[-1][-1]
-
-
-if __name__ == "__main__":
-    print(longest_common_subsequence("111", "000"))
-    print(longest_common_subsequence("10101", "10010"))

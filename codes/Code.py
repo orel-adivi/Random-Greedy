@@ -1,6 +1,6 @@
 #
 #   @file : Code.py
-#   @date : 24 January 2024
+#   @date : 05 March 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 import numpy as np
@@ -38,7 +38,7 @@ class Code(ABC):
     def decode(self, word: str) -> int:
         assert len(word) <= self.length
         distances = [levenshtein_deletion_distance(codeword, word) for codeword in self.mapping.values()]
-        return min(self.mapping.keys(), key=distances.__getitem__)
+        return int(min(self.mapping.keys(), key=distances.__getitem__))
 
     def max_deletions_old(self) -> int:
         sorted_words = sorted(self.codewords, key=lambda x: x.count('1'))

@@ -1,6 +1,6 @@
 #
 #   @file : LinSpaceCode.py
-#   @date : 24 January 2024
+#   @date : 05 March 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -19,10 +19,3 @@ class LinSpaceCode(Code):
         for i, j in zip(range(2, words), np.linspace(1, self.length/2, num=words-2)):
             codeword = (self.length * ('0' * int(j) + '1' * int(j)))[0:self.length]
             self._insert_codeword(i, codeword)
-
-
-if __name__ == "__main__":
-    r = LinSpaceCode(100)
-    print(r.codewords)
-    print(r.max_deletions())
-    print(r.decode(r.mapping[3][0:80]))

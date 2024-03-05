@@ -1,6 +1,6 @@
 #
 #   @file : GreedyCode.py
-#   @date : 24 January 2024
+#   @date : 05 March 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -29,9 +29,3 @@ class GreedyCode(Code):
                  else Code._codeword_as_str(np.random.choice([0, 1], size=1)) for i in range(self.length)]
             )
         return next_codeword
-
-
-if __name__ == "__main__":
-    r = GreedyCode(200)
-    print(r.codewords)
-    print(r.max_deletions())

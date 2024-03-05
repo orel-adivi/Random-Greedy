@@ -1,6 +1,6 @@
 #
 #   @file : VTRepetitionCode.py
-#   @date : 24 January 2024
+#   @date : 05 March 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -26,13 +26,3 @@ class VTRepetitionCode(Code):
     def __multiply(self, codeword):
         return ''.join([str(x) * int(np.ceil(self.length / self.width))
                         for x in codeword])[0:self.length]
-
-
-if __name__ == "__main__":
-    l = 400
-    log_l = int(np.ceil(np.log2(l)))
-    m = log_l + int(np.ceil(np.log2(log_l))) + 1
-    r = VTRepetitionCode(l, m)
-    print(len(r.codewords))
-    print(r.max_deletions())
-

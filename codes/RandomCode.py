@@ -1,6 +1,6 @@
 #
 #   @file : RandomCode.py
-#   @date : 24 January 2024
+#   @date : 05 March 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -19,9 +19,3 @@ class RandomCode(Code):
             while Code._codeword_as_str(codeword) in self.codewords:
                 codeword = np.random.choice([0, 1], size=length)
             self._insert_codeword(i, Code._codeword_as_str(codeword))
-
-
-if __name__ == "__main__":
-    r = RandomCode(400)
-    print(r.codewords)
-    print(r.max_deletions())

@@ -1,6 +1,6 @@
 #
 #   @file : RandomGreedyCode.py
-#   @date : 24 January 2024
+#   @date : 05 March 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -26,9 +26,3 @@ class GreedyRandomCode(Code):
             dists = [max([pylcs.lcs_sequence_length(self._codeword_as_str(candidates[j]), c) for c in self.codewords])
                      for j in range(options)]
             self._insert_codeword(i, Code._codeword_as_str(candidates[dists.index(min(dists))]))
-
-
-if __name__ == "__main__":
-    r = GreedyRandomCode(400, options=3)
-    print(r.codewords)
-    print(r.max_deletions())
