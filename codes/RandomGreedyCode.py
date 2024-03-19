@@ -12,7 +12,7 @@ from codes.Code import Code
 
 """In each iteration, this code generates m codeword candidates (the default m is 2) 
 and selects the candidate with the largest distance from the previous codewords."""
-class GreedyRandomCode(Code):
+class RandomGreedyCode(Code):
     @overrides
     def __init__(self, length=20, options=2):
         words = length
