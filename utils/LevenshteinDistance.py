@@ -6,6 +6,7 @@
 import numpy as np
 
 
+"""Computes Levenshtein deletion distance between an expected string and the measured/received string."""
 def levenshtein_deletion_distance(expected: str, measured: str):
     dims = (len(measured) + 1, len(expected) + 1)
     dp_matrix = np.zeros(dims, dtype=np.int64)

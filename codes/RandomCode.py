@@ -8,7 +8,8 @@ import numpy as np
 
 from codes.Code import Code
 
-
+"""Uses numpy.random.choice to create random codewords. 
+The "baseline" code which we compare other codes to."""
 class RandomCode(Code):
     @overrides
     def __init__(self, length=20):

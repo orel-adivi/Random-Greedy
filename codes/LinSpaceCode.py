@@ -9,6 +9,8 @@ import numpy as np
 from codes.Code import Code
 
 
+"""Uses the numpy.linspace function to get a different sequence length l for each codeword.
+The created codewords alternate between l-long sequences of 0 and l-long sequences of 1."""
 class LinSpaceCode(Code):
     @overrides
     def __init__(self, length=20):

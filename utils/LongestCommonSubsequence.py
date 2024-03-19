@@ -6,6 +6,7 @@
 import numpy as np
 
 
+"""A version of LCS we implemented before switching to an existing library."""
 def longest_common_subsequence(w1: str, w2: str):
     dims = (len(w1) + 1, len(w2) + 1)
     dp_matrix = np.zeros(dims, dtype=np.int64)

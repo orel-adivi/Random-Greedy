@@ -9,6 +9,8 @@ import numpy as np
 from codes.Code import Code
 
 
+"""This code generates all words of length log(n) and multiplies each letter
+n/log(n) times, giving words of length n."""
 class RepetitionCode(Code):
     @overrides
     def __init__(self, length=20):

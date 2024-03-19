@@ -8,6 +8,8 @@
 
 import numpy as np
 
+
+"""Not our code - source given above."""
 class VTCode:
     def __init__(self, n: int, q: int, a = 0, b = 0,
                 correct_substitutions = False):

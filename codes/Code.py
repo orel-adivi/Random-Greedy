@@ -10,12 +10,14 @@ from abc import ABC, abstractmethod
 from utils.LevenshteinDistance import levenshtein_deletion_distance
 
 
+"""A base class for code generators. Each code generator we wrote is derived from this class."""
 class Code(ABC):
 
     @staticmethod
     def _codeword_as_str(codeword: np.ndarray) -> str:
         return ''.join([str(x) for x in codeword])
 
+    # save a new codeword and its corresponding value
     def _insert_codeword(self, value: int, codeword: str) -> None:
         assert 0 <= value < self.words
         assert value not in self.mapping.keys()
@@ -40,6 +42,7 @@ class Code(ABC):
         distances = [levenshtein_deletion_distance(codeword, word) for codeword in self.mapping.values()]
         return int(min(self.mapping.keys(), key=distances.__getitem__))
 
+    # compute max deletion distance of the code using DP
     def max_deletions_old(self) -> int:
         sorted_words = sorted(self.codewords, key=lambda x: x.count('1'))
         max_lcs = 0
@@ -54,6 +57,7 @@ class Code(ABC):
                     max_lcs = lcs
         return self.length - max_lcs - 1
 
+    # improved version of the previous method, utilizing sorting to skip checking some pairs of words
     def max_deletions(self) -> int:
         sorted_words = sorted(self.codewords, key=lambda x: x.count('1'))
         max_lcs = 0
