@@ -1,54 +1,12 @@
-
-
-
 if __name__ == "__main__":
-    l = 400
-    log_l = int(np.ceil(np.log2(l)))
-    m = log_l + int(np.ceil(np.log2(log_l))) + 1
-    r = VTRepetitionNaryCode(l, m)
-    print(len(r.codewords))
-    print(r.max_deletions())
-
-
-if __name__ == "__main__":
-    l = 400
-    log_l = int(np.ceil(np.log2(l)))
-    m = log_l + int(np.ceil(np.log2(log_l))) + 1
-    r = VTRepetitionCode(l, m)
-    print(len(r.codewords))
-    print(r.max_deletions())
-
-if __name__ == "__main__":
-    r = RepetitionCode(400)
-    # print(r.codewords)
-    print(r.max_deletions())
-
-if __name__ == "__main__":
-    r = GreedyRandomCode(400, options=3)
-    print(r.codewords)
-    print(r.max_deletions())
-
-if __name__ == "__main__":
-    r = RandomCode(400)
-    print(r.codewords)
-    print(r.max_deletions())
-
-if __name__ == "__main__":
-    r = LogSpaceCode(100)
-    print(r.codewords)
-    print(r.max_deletions())
-    print(r.decode(r.mapping[3][0:75]))
-
-if __name__ == "__main__":
-    r = LinSpaceCode(100)
-    print(r.codewords)
-    print(r.max_deletions())
-    print(r.decode(r.mapping[3][0:80]))
-
-if __name__ == "__main__":
-    r = GreedyCode(200)
-    print(r.codewords)
-    print(r.max_deletions())
+    y1 = [calculate_max_deletions(lambda: GreedyRandomCode(length, options=2)) for length in range(100, 600, 100)]
+    print(y1)
+    y2 = [calculate_max_deletions(lambda: GreedyRandomCode(length, options=3)) for length in range(100, 600, 100)]
+    print(y2)
+    y3 = [calculate_max_deletions(lambda: GreedyRandomCode(length, options=4)) for length in range(100, 600, 100)]
+    print(y3)
+    y4 = [calculate_max_deletions(lambda: GreedyRandomCode(length, options=5)) for length in range(100, 600, 100)]
+    print(y4)
 
 if __name__ == "__main__":
     print(longest_common_subsequence("111", "000"))

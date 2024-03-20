@@ -1,0 +1,4 @@
+"length","RandomCode (deletions)","RandomCode (seconds)",RandomCode (codewords),"GreedyCode (deletions)","GreedyCode (seconds)",GreedyCode (codewords),"RepetitionCode (deletions)","RepetitionCode (seconds)",RepetitionCode (codewords),"RandomGreedyCode (deletions)","RandomGreedyCode (seconds)",RandomGreedyCode (codewords)
+100,14,0.016663630803426106,100,20,8.78467027346293,100,9,0.005339860916137695,100,39,1.9733312129974365,100
+110,16,0.020333369572957356,110,40,11.825025081634521,110,13,0.0026718775431315103,110,43,2.658336798350016,110
+120,17,0.02633015314737956,120

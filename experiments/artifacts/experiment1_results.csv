@@ -1,0 +1,3 @@
+"length","RandomCode (deletions)","RandomCode (seconds)","RepetitionCode (deletions)","RepetitionCode (seconds)","VTRepetitionCode (deletions)","VTRepetitionCode (seconds)","VTRepetitionNaryCode (deletions)","VTRepetitionNaryCode (seconds)","RandomGreedyCode (deletions)","RandomGreedyCode (seconds)"
+50,7,0.005330959955851237,4,0.0009995301564534504,9,0.003998597462972005,2,0.01833621660868327,17,0.1889947255452474
+100,15,0.019672870635986328,9,0.002664486567179362,9,0.009322722752888998,4,0.030334631601969402,38,1.9109117984771729
