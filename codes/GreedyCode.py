@@ -24,7 +24,7 @@ class GreedyCode(Code):
                 codeword = self.__generate_next()
             self._insert_codeword(i, codeword)
 
-    # start with the all-0 codeword, then go over existing codewords and tweak it until
+    # start with a random codeword, then go over existing codewords and tweak it until
     # it's "different enough" from them
     def __generate_next(self):
         next_codeword = Code._codeword_as_str(np.random.choice([0, 1], size=self.length))
