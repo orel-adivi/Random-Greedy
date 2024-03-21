@@ -75,7 +75,7 @@ def run_experiment1() -> None:
 
 
 def run_experiment2() -> None:
-    lengths = list(range(50, 151, 50))
+    lengths = list(range(50, 550, 50))
     codes = [
         (lambda length: RandomCode(length=length), 'RandomCode'),
         (lambda length: GreedyCode(length=length), 'GreedyCode'),
@@ -164,7 +164,7 @@ def run_experiment5() -> None:
 
 
 if __name__ == '__main__':
-    run_experiment1()
+    # run_experiment1()
     run_experiment2()
     run_experiment3()
     run_experiment4()

@@ -27,10 +27,11 @@ class GreedyCode(Code):
     # start with the all-0 codeword, then go over existing codewords and tweak it until
     # it's "different enough" from them
     def __generate_next(self):
-        next_codeword = '0' * self.length
+        next_codeword = Code._codeword_as_str(np.random.choice([0, 1], size=self.length))
         for codeword in self.codewords:
             next_codeword = "".join(
                 [str(1 - int(codeword[i])) if codeword[i] == next_codeword[i]
                  else Code._codeword_as_str(np.random.choice([0, 1], size=1)) for i in range(self.length)]
             )
+        self.last_codeword = next_codeword
         return next_codeword
