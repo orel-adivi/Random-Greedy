@@ -75,12 +75,10 @@ def run_experiment1() -> None:
 
 
 def run_experiment2() -> None:
-    lengths = list(range(100, 151, 10))
+    lengths = list(range(50, 151, 50))
     codes = [
         (lambda length: RandomCode(length=length), 'RandomCode'),
         (lambda length: GreedyCode(length=length), 'GreedyCode'),
-        #(lambda length: LinSpaceCode(length=length), 'LinSpaceCode'),
-        #(lambda length: LogSpaceCode(length=length, pattern_false='0', pattern_true='1'), 'LogSpaceCode'),
         (lambda length: RepetitionCode(length=length), 'RepetitionCode'),
         (lambda length: RandomGreedyCode(length=length, options=2), 'RandomGreedyCode'),
     ]
@@ -106,13 +104,58 @@ def run_experiment2() -> None:
 
 
 def run_experiment3() -> None:
-    # log pattern
-    pass
+    lengths = list(range(50, 550, 50))
+    codes = [
+        (lambda length: LinSpaceCode(length=length), 'LinSpaceCode'),
+        (lambda length: LogSpaceCode(length=length, pattern_false='0', pattern_true='1'), 'LogSpaceCode')
+    ]
+
+    print(f'=== Performing experiment #3:')
+    with open(LOGSPACE_PATTERN_FILE, "w") as f:
+        f.write('"length"')
+        for _, title in codes:
+            f.write(f',"{title} (deletions)","{title} (seconds)",{title} (codewords)')
+        f.write('\n')
+        for length in lengths:
+            print(f'Now calculating length={length}:')
+            f.write(f'{length}')
+            for code, _ in tqdm(codes):
+                code, deletions, seconds = measure_code(lambda: code(length))
+                codewords = len(code.codewords)
+                assert codewords <= length
+                for codeword in code.codewords:
+                    assert len(codeword) == length
+                f.write(f',{deletions},{seconds},{codewords}')
+            f.write('\n')
+            print(f'Done!\n')
 
 
 def run_experiment4() -> None:
-    # greedy random options
-    pass
+    lengths = list(range(50, 550, 50))
+    codes = [
+        (lambda length: RandomGreedyCode(length=length, options=2), 'RandomGreedyCode'),
+        (lambda length: RandomGreedyCode(length=length, options=3), 'RandomGreedyCode'),
+        (lambda length: RandomGreedyCode(length=length, options=4), 'RandomGreedyCode'),
+        (lambda length: RandomGreedyCode(length=length, options=5), 'RandomGreedyCode'),
+    ]
+
+    print(f'=== Performing experiment #4:')
+    with open(GREEDY_RANDOM_OPTIONS_FILE, "w") as f:
+        f.write('"length"')
+        for _, title in codes:
+            f.write(f',"{title} (deletions)","{title} (seconds)"')
+        f.write('\n')
+        for length in lengths:
+            print(f'Now calculating length={length}:')
+            f.write(f'{length}')
+            for code, _ in tqdm(codes):
+                code, deletions, seconds = measure_code(lambda: code(length))
+                assert len(code.codewords) == length
+                for codeword in code.codewords:
+                    assert len(codeword) == length
+                f.write(f',{deletions},{seconds}')
+            f.write('\n')
+            print(f'Done!\n')
 
 
 def run_experiment5() -> None:
@@ -121,7 +164,7 @@ def run_experiment5() -> None:
 
 
 if __name__ == '__main__':
-    #run_experiment1()
+    run_experiment1()
     run_experiment2()
     run_experiment3()
     run_experiment4()
