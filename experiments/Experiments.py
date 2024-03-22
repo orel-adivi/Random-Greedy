@@ -44,7 +44,6 @@ def calculate_m_value(length: int) -> int:
     log_l = int(np.ceil(np.log2(length)))
     return log_l + int(np.ceil(np.log2(log_l))) + 1
 
-
 def run_experiment1() -> None:
     lengths = list(range(50, 550, 50))
     codes = [
@@ -165,7 +164,7 @@ def run_experiment5() -> None:
 
 if __name__ == '__main__':
     # run_experiment1()
-    run_experiment2()
-    run_experiment3()
+    # run_experiment2()
+    # run_experiment3()
     run_experiment4()
     run_experiment5()
