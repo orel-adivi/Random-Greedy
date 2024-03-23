@@ -158,13 +158,34 @@ def run_experiment4() -> None:
 
 
 def run_experiment5() -> None:
-    # vtrepetitionnary
-    pass
+    lengths = list(range(50, 300, 50))
+    codes = [
+        (lambda length: VTRepetitionNaryCode(length=length, m=calculate_m_value(length), q=4), 'VTRepetitionNaryCode'),
+        (lambda length: VTRepetitionNaryCode(length=length, m=calculate_m_value(length), q=8), 'VTRepetitionNaryCode'),
+    ]
+
+    print(f'=== Performing experiment #5:')
+    with open(VTREPETITIONNARY_TUNING_FILE, "w") as f:
+        f.write('"length"')
+        for _, title in codes:
+            f.write(f',"{title} (deletions)","{title} (seconds)"')
+        f.write('\n')
+        for length in lengths:
+            print(f'Now calculating length={length}:')
+            f.write(f'{length}')
+            for code, _ in tqdm(codes):
+                code, deletions, seconds = measure_code(lambda: code(length))
+                assert len(code.codewords) == length
+                for codeword in code.codewords:
+                    assert len(codeword) == length
+                f.write(f',{deletions},{seconds}')
+            f.write('\n')
+            print(f'Done!\n')
 
 
 if __name__ == '__main__':
     # run_experiment1()
     # run_experiment2()
     # run_experiment3()
-    run_experiment4()
+    # run_experiment4()
     run_experiment5()
