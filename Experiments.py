@@ -159,7 +159,7 @@ def run_experiment4() -> None:
 
 
 if __name__ == '__main__':
-    #run_experiment1()
-    #run_experiment2()
+    run_experiment1()
+    run_experiment2()
     run_experiment3()
-    #run_experiment4()
+    run_experiment4()
