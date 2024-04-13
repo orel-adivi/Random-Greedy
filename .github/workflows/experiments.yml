@@ -39,9 +39,7 @@ jobs:
       run: rm experiments/artifacts/*
 
     - name: Run experiments
-      run: |
-        echo "export PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
-        python Experiments.py
+      run: python Experiments.py
 
     - name: Generate figures
       run: python GenerateFigures.py
