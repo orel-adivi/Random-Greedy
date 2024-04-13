@@ -37,7 +37,10 @@ jobs:
         python -m pip install -r requirements.txt
 
     - name: Remove current artifacts
-      run: rm artifacts/*
+      run: |
+        ls
+        rm artifacts/*
+        ls
 
     - name: Run experiments
       run: python Experiments.py
