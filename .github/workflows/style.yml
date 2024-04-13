@@ -3,7 +3,6 @@
 #   @date : 13 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
-# Sanity Checks
 name: Check Style (Flake8) - Style
 
 on:

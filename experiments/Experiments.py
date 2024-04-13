@@ -3,7 +3,6 @@
 #   @date : 13 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
-import sys
 import time
 import numpy as np
 from tqdm import tqdm
@@ -160,9 +159,7 @@ def run_experiment4() -> None:
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 2:
-        BASE_DIRECTORY = sys.argv[-1]
-    run_experiment1()
-    run_experiment2()
+    #run_experiment1()
+    #run_experiment2()
     run_experiment3()
-    run_experiment4()
+    #run_experiment4()

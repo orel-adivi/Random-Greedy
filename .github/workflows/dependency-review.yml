@@ -3,7 +3,6 @@
 #   @date : 13 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
-# Dependency Review
 name: Dependency Review - Security
 
 on: [pull_request]

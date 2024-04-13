@@ -1,9 +1,9 @@
 #
-#   @file : tests.yml
+#   @file : benchmarks.yml
 #   @date : 13 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
-name: Run all Unittests - Testing
+name: Run all experiments - Testing
 
 on:
   push:
@@ -35,5 +35,17 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
 
-    - name: Run benchmarks
-      run: python -m unittest experiments/Unittests.py
+    - name: Remove current artifacts
+      run: rm experiments/artifacts/*
+
+    - name: Run experiments
+      run: python experiments/Experiments.py
+
+    - name: Generate figures
+      run: python experiments/GenerateFigures.py
+
+    - name: Archive artifacts
+      uses: actions/upload-artifacts@v4
+      with:
+        name: artifacts
+        path: experiments/artifacts/*
