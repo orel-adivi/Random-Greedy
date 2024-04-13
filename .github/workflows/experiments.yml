@@ -45,7 +45,7 @@ jobs:
       run: python experiments/GenerateFigures.py
 
     - name: Archive artifacts
-      uses: actions/upload-artifacts@v4
+      uses: actions/upload-artifact@v4
       with:
         name: artifacts
         path: experiments/artifacts/*
