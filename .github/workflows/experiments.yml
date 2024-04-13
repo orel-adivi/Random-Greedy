@@ -40,13 +40,11 @@ jobs:
 
     - name: Run experiments
       run: |
-        python -c "import sys; sys.path.append('.');"
+        echo "export PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
         python experiments/Experiments.py
 
     - name: Generate figures
-      run: |
-        python -c "import sys; sys.path.append('.');"
-        python experiments/GenerateFigures.py
+      run: python experiments/GenerateFigures.py
 
     - name: Archive artifacts
       uses: actions/upload-artifact@v4
