@@ -107,7 +107,7 @@ def run_experiment3() -> None:
     lengths = list(range(50, 251, 50))
     codes = [
         (lambda ln: VTRepetitionCode(length=ln, m=calculate_m_value(ln)),
-         'VTRepetitionCode'),
+         'VTRepetitionCode (2-ary)'),
         (lambda ln: VTRepetitionNaryCode(length=ln, m=calculate_m_value(ln), q=4),
          'VTRepetitionNaryCode (4-ary)'),
         (lambda ln: VTRepetitionNaryCode(length=ln, m=calculate_m_value(ln), q=8),
@@ -135,7 +135,7 @@ def run_experiment4() -> None:
     """This experiment compares different choices of 'option' parameter for RandomGreedyCode."""
     lengths = list(range(50, 551, 50))
     codes = [
-        (lambda ln: RandomGreedyCode(length=ln, options=1), 'RandomGreedyCode (1 options)'),
+        (lambda ln: RandomCode(length=ln), 'RandomCode (1 options)'),
         (lambda ln: RandomGreedyCode(length=ln, options=2), 'RandomGreedyCode (2 options)'),
         (lambda ln: RandomGreedyCode(length=ln, options=3), 'RandomGreedyCode (3 options)'),
         (lambda ln: RandomGreedyCode(length=ln, options=4), 'RandomGreedyCode (4 options)'),
