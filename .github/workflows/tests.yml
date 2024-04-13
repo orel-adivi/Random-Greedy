@@ -36,4 +36,4 @@ jobs:
         python -m pip install -r requirements.txt
 
     - name: Run benchmarks
-      run: python -m unittest experiments/Unittests.py
+      run: python -m unittest Unittests.py

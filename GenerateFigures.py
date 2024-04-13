@@ -99,7 +99,7 @@ def generate_graph3():
 def generate_graph4():
     x = []
     ys = []
-    with open('./artifacts/experiment3.csv', newline='') as csvfile:
+    with open('experiments/artifacts/experiment3.csv', newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
         start = True
         for row in reader:
