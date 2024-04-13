@@ -1,0 +1,13 @@
+#
+#   @file : dependabot.yml
+#   @date : 13 April 2024
+#   @authors : Orel Adivi and Daniel Noor
+#
+# Dependabot - Security
+
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
