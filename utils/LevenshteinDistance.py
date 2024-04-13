@@ -1,13 +1,13 @@
 #
 #   @file : LevenshteinDistance.py
-#   @date : 05 March 2024
+#   @date : 14 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 import numpy as np
 
 
-"""Computes Levenshtein deletion distance between an expected string and the measured/received string."""
 def levenshtein_deletion_distance(expected: str, measured: str):
+    """Computes Levenshtein deletion distance between an expected string and the measured/received string."""
     dims = (len(measured) + 1, len(expected) + 1)
     dp_matrix = np.zeros(dims, dtype=np.int64)
     for index_expected in range(1, dims[1]):  # init first row
