@@ -1,5 +1,5 @@
 #
-#   @file : benchmarks.yml
+#   @file : experiments.yml
 #   @date : 13 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
@@ -34,16 +34,19 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
-        echo "PYTHONPATH=mlprepare" >> $GITHUB_ENV
 
     - name: Remove current artifacts
       run: rm experiments/artifacts/*
 
     - name: Run experiments
-      run: python experiments/Experiments.py
+      run: |
+        python -c "import sys; sys.path.append('.');"
+        python experiments/Experiments.py
 
     - name: Generate figures
-      run: python experiments/GenerateFigures.py
+      run: |
+        python -c "import sys; sys.path.append('.');"
+        python experiments/GenerateFigures.py
 
     - name: Archive artifacts
       uses: actions/upload-artifact@v4
