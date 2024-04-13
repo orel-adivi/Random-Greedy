@@ -1,6 +1,6 @@
 #
 #   @file : LongestCommonSubsequence.py
-#   @date : 14 April 2024
+#   @date : 13 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 import numpy as np
