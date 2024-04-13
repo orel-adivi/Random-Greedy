@@ -34,6 +34,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
+        echo "PYTHONPATH=mlprepare" >> $GITHUB_ENV
 
     - name: Remove current artifacts
       run: rm experiments/artifacts/*
