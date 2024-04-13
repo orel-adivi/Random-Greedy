@@ -128,6 +128,6 @@ def generate_graph4():
 if __name__ == "__main__":
     # generate_graph1()
     # generate_graph2()
-    # generate_graph3()
-    generate_graph4()
+    generate_graph3()
+    # generate_graph4()
 
