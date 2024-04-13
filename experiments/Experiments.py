@@ -85,7 +85,7 @@ def run_experiment2() -> None:
         (lambda ln: RandomGreedyCode(length=ln, options=2), 'RandomGreedyCode'),
     ]
 
-    print(f'\n=== Performing experiment #2:')
+    print(f'=== Performing experiment #2:')
     with open(BASE_DIRECTORY + '/experiment2.csv', 'w') as f:
         f.write('"length"')
         for _, title in codes:
@@ -114,7 +114,7 @@ def run_experiment3() -> None:
          'VTRepetitionNaryCode (8-ary)'),
     ]
 
-    print(f'\n=== Performing experiment #5:')
+    print(f'=== Performing experiment #3:')
     with open(BASE_DIRECTORY + '/experiment3.csv', 'w') as f:
         f.write('"length"')
         for _, title in codes:
@@ -142,7 +142,7 @@ def run_experiment4() -> None:
         (lambda ln: RandomGreedyCode(length=ln, options=5), 'RandomGreedyCode (5 options)'),
     ]
 
-    print(f'\n=== Performing experiment #4:')
+    print(f'=== Performing experiment #4:')
     with open(BASE_DIRECTORY + '/experiment4.csv', 'w') as f:
         f.write('"length"')
         for _, title in codes:
@@ -162,7 +162,7 @@ def run_experiment4() -> None:
 if __name__ == '__main__':
     if len(sys.argv) > 2:
         BASE_DIRECTORY = sys.argv[-1]
-    #run_experiment1()
-    #run_experiment2()
-    #run_experiment3()
+    run_experiment1()
+    run_experiment2()
+    run_experiment3()
     run_experiment4()
