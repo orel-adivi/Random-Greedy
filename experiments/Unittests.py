@@ -13,7 +13,7 @@ from utils.LongestCommonSubsequence import longest_common_subsequence
 
 class TestImplementationCorrectness(unittest.TestCase):
     """The implementation correctness of levenshtein_deletion_distance and
-    longest_common_subsequence is checked in this unittest class"""
+    longest_common_subsequence is checked in this unittest class."""
 
     def test_levenshtein_distance_equal_lengths(self):
         self.assertTrue(levenshtein_deletion_distance('', '') == 0)

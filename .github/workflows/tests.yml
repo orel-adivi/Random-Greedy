@@ -4,7 +4,7 @@
 #   @authors : Orel Adivi and Daniel Noor
 #
 # Run all Benchmarks
-name: Run all Benchmarks - Testing
+name: Run all Unittests - Testing
 
 on:
   push:
