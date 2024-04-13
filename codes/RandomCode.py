@@ -1,6 +1,6 @@
 #
 #   @file : RandomCode.py
-#   @date : 05 March 2024
+#   @date : 14 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -8,9 +8,11 @@ import numpy as np
 
 from codes.Code import Code
 
-"""Uses numpy.random.choice to create random codewords. 
-The "baseline" code which we compare other codes to."""
+
 class RandomCode(Code):
+    """Uses numpy.random.choice to create random codewords.
+    The "baseline" code which we compare other codes to."""
+
     @overrides
     def __init__(self, length=20):
         words = length

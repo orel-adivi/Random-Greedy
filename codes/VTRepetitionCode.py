@@ -1,6 +1,6 @@
 #
 #   @file : VTRepetitionCode.py
-#   @date : 05 March 2024
+#   @date : 14 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -10,10 +10,11 @@ from utils import VTCode
 from codes.Code import Code
 
 
-"""This code takes all words from VT0(m) for some m and multiplies each letter n/m times 
-(n is the code length). The parameter m is chosen to get a code with slightly more than n 
-codewords, and redundant words are removed."""
 class VTRepetitionCode(Code):
+    """This code takes all words from VT0(m) for some m and multiplies each letter n/m times
+    (n is the code length). The parameter m is chosen to get a code with slightly more than n
+    codewords, and redundant words are removed."""
+
     @overrides
     def __init__(self, length=20, m=5):
         words = length

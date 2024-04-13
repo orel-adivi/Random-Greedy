@@ -1,6 +1,6 @@
 #
 #   @file : GreedyCode.py
-#   @date : 05 March 2024
+#   @date : 14 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -9,10 +9,11 @@ import numpy as np
 from codes.Code import Code
 
 
-"""A code generator which generates codewords one by one. 
-With each generation we try creating a codeword which is as different as
-possible from all previously generated codeword."""
 class GreedyCode(Code):
+    """A code generator which generates codewords one by one.
+    With each generation we try creating a codeword which is as different as
+    possible from all previously generated codeword."""
+
     @overrides
     def __init__(self, length=20):
         words = length

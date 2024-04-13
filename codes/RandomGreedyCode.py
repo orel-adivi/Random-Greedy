@@ -1,6 +1,6 @@
 #
 #   @file : RandomGreedyCode.py
-#   @date : 05 March 2024
+#   @date : 14 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -10,9 +10,10 @@ import pylcs
 from codes.Code import Code
 
 
-"""In each iteration, this code generates m codeword candidates (the default m is 2) 
-and selects the candidate with the largest distance from the previous codewords."""
 class RandomGreedyCode(Code):
+    """In each iteration, this code generates m codeword candidates (the default m is 2)
+    and selects the candidate with the largest distance from the previous codewords."""
+
     @overrides
     def __init__(self, length=20, options=2):
         words = length

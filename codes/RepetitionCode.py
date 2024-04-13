@@ -1,6 +1,6 @@
 #
 #   @file : RepetitionCode.py
-#   @date : 05 March 2024
+#   @date : 14 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -9,9 +9,10 @@ import numpy as np
 from codes.Code import Code
 
 
-"""This code generates all words of length log(n) and multiplies each letter
-n/log(n) times, giving words of length n."""
 class RepetitionCode(Code):
+    """This code generates all words of length log(n) and multiplies each letter
+    n/log(n) times, giving words of length n."""
+
     @overrides
     def __init__(self, length=20):
         words = length

@@ -1,6 +1,6 @@
 #
 #   @file : LogSpaceCode.py
-#   @date : 05 March 2024
+#   @date : 14 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -9,9 +9,10 @@ import numpy as np
 from codes.Code import Code
 
 
-"""Uses the numpy.logspace function to get a different sequence length l for each codeword.
-The created codewords alternate between sequences of 0 and l-long sequences of 1."""
 class LogSpaceCode(Code):
+    """Uses the numpy.logspace function to get a different sequence length l for each codeword.
+    The created codewords alternate between sequences of 0 and l-long sequences of 1."""
+
     @overrides
     def __init__(self, length=20, pattern_false='0', pattern_true='1'):
         words = int(np.ceil(np.log2(length)))

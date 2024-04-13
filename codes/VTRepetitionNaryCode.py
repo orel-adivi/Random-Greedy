@@ -1,6 +1,6 @@
 #
 #   @file : VTRepetitionNaryCode.py
-#   @date : 05 March 2024
+#   @date : 14 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 from overrides import overrides
@@ -10,11 +10,12 @@ from utils import VTCode
 from codes.Code import Code
 
 
-"""This code takes all words from VT0(m, q) for some m and q. First we convert
- each codeword to binary and then multiply each letter n/m times (n is the code length).
-The parameter m is chosen to get a code with slightly more than n codewords, and redundant 
-words are removed."""
 class VTRepetitionNaryCode(Code):
+    """This code takes all words from VT0(m, q) for some m and q. First we convert
+     each codeword to binary and then multiply each letter n/m times (n is the code length).
+    The parameter m is chosen to get a code with slightly more than n codewords, and redundant
+    words are removed."""
+
     @overrides
     def __init__(self, length=100, m=9, q=4):
         words = length

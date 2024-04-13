@@ -1,6 +1,6 @@
 #
 #   @file : Code.py
-#   @date : 05 March 2024
+#   @date : 14 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 import numpy as np
@@ -10,8 +10,8 @@ from abc import ABC, abstractmethod
 from utils.LevenshteinDistance import levenshtein_deletion_distance
 
 
-"""A base class for code generators. Each code generator we wrote is derived from this class."""
 class Code(ABC):
+    """A base class for code generators. Each code generator we wrote is derived from this class."""
 
     @staticmethod
     def _codeword_as_str(codeword: np.ndarray) -> str:
@@ -70,7 +70,7 @@ class Code(ABC):
                 lcs = pylcs.lcs_sequence_length(w1, w2)
                 if lcs > max_lcs:
                     max_lcs = lcs
-            for j, w2 in enumerate(sorted_words[i-1:-1:-1]):
+            for j, w2 in enumerate(sorted_words[i - 1:-1:-1]):
                 if min(sorted_counts[i], sorted_counts[j]) \
                         + min(self.length - sorted_counts[i], self.length - sorted_counts[j]) <= max_lcs:
                     break

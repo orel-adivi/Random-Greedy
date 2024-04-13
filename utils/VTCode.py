@@ -10,7 +10,7 @@ import numpy as np
 
 
 class VTCode:
-    """This is Not our code, the link to the source given above"""
+    """This is Not our code, the link to the source given above."""
 
     def __init__(self, n: int, q: int, a=0, b=0,
                  correct_substitutions=False):
