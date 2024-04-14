@@ -20,36 +20,33 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
-        experiment: [1, 2, 3, 4]
+        os: [ ubuntu-latest, windows-latest ]
+        experiment: [ 1, 2, 3, 4 ]
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
 
-    - name: Remove current artifacts
-      run: |
-        ls
-        rm artifacts/*
-        ls
+      - name: Remove current artifacts
+        run: rm artifacts/*
 
-    - name: Run experiments
-      run: python Experiments.py ${{matrix.experiment}}
+      - name: Run experiments
+        run: python Experiments.py ${{matrix.experiment}}
 
-    - name: Generate figures
-      run: python GenerateFigures.py ${{matrix.experiment}}
+      - name: Generate figures
+        run: python GenerateFigures.py ${{matrix.experiment}}
 
-    - name: Archive artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: Result & Figure of experiment ${{matrix.experiment}} (${{matrix.os}})
-        path: artifacts/*
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Result & Figure of experiment ${{matrix.experiment}} (${{matrix.os}})
+          path: artifacts/*
