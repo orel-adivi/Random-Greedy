@@ -8,36 +8,45 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 
+BASE_DIRECTORY = './artifacts'
 
-def generate_graph1():
+
+def generate_figure1() -> None:
+    """This function generates a figure for experiment #1."""
     labels = []
-    x = []
-    ys = []
-    with open('../experiments/artifacts/experiment1_results.csv', newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-        start = True
+    lengths = []
+    values = []
+    with open(BASE_DIRECTORY + '/experiment1.csv', 'r', newline='') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',')
+        label_line = reader.__next__()
+        assert label_line[0] == 'length'
+        labels = [label[:-12] for label in label_line[1::2]]
+        values = [[] for _ in range(len(labels))]
         for row in reader:
-            if start:
-                labels = [elem[1:] for elem in ','.join(row).split(',')][1::4]
-                start = False
-                ys = [[] for _ in labels]
-            else:
-                row = ','.join(row).split(',')
-                x.append(int(row[0]))
-                values = row[1::2]
-                for y, val in zip(ys, values):
-                    y.append(int(val))
+            lengths.append(int(row[0]))
+            current_values = row[1::2]
+            for i in range(len(current_values)):
+                values[i].append(int(current_values[i]))
 
-    labels.append('GreedyCode')
-    ys.append([9, 34, 62, 79, 50, 83, 78, 110, 98, 98])
-    for y, label in zip(ys, labels):
-        plt.plot(x, y, label=label)
-    plt.title("Deletion Correction Capabilities of Different Codes")
-    plt.xlabel("Code Length [bit]")
-    plt.ylabel("Maximum Number of Fixable Deletions [bit]")
+    assert len(labels) == len(values)
+    lengths = np.array(lengths)
+    values = [np.array(arr) for arr in values]
+
+    plt.figure(figsize=(7, 5))
+    for i in range(len(labels)):
+        plt.plot(lengths, values[i], label=labels[i])
+
+    print('=== Generating figure #1... ===')
+    plt.title('Deletion correction capabilities of different codes')
+    plt.xlabel('Codeword length [bit]')
+    plt.ylabel('Maximal number of fixable deletions [bit]')
+    plt.xlim([lengths[0], lengths[-1]])
+    plt.ylim([0, 50 * int(np.ceil(max([np.max(arr) for arr in values]) / 50.0))])
+    plt.xticks(np.arange(lengths[0], lengths[-1] + 1, 50))
+    plt.yticks(np.arange(0, 50 * int(np.ceil(max([np.max(arr) for arr in values]) / 50.0)) + 1, 25))
     plt.legend()
     plt.grid()
-    plt.savefig("artifacts/graph1.png")
+    plt.savefig(BASE_DIRECTORY + '/figure1.png', format='png', dpi=300)
 
 
 def generate_graph2():
@@ -131,34 +140,11 @@ if __name__ == "__main__":
     FIGURE_ID = None
     if len(sys.argv) > 1:
         FIGURE_ID = int(sys.argv[-1])
-    # if FIGURE_ID is None or FIGURE_ID == 1:
-    #     generate_graph1()
+    if FIGURE_ID is None or FIGURE_ID == 1:
+        generate_figure1()
     # if FIGURE_ID is None or FIGURE_ID == 2:
     #     generate_graph2()
-    if FIGURE_ID is None or FIGURE_ID == 3:
-        generate_graph3()
+    # if FIGURE_ID is None or FIGURE_ID == 3:
+    #     generate_graph3()
     # if FIGURE_ID is None or FIGURE_ID == 4:
     #     generate_graph4()
-
-"""
-if __name__ == "__main__":
-    x = [100, 200, 300, 400, 500]
-
-    y1 = [9, 24, 27, 39, 51]
-    y2 = [9, 29, 35, 51, 67]
-    y3 = [4, 8, 13, 14, 31]
-    y4 = [13, 31, 46, 64, 81]
-    y5 = [38, 83, 129, 169, 215]
-
-    plt.plot(x, y1, label='Repetition Code')
-    plt.plot(x, y2, label='VT Repetition Code')
-    plt.plot(x, y3, label='N-ary VT Repetition Code')
-    plt.plot(x, y4, label='Random Code')
-    plt.plot(x, y5, label='Random/Greedy Code')
-    plt.title("Deletion Correction Capabilities of Different Codes")
-    plt.xlabel("Code Length [bit]")
-    plt.ylabel("Maximum Number of Fixable Deletions [bit]")
-    plt.legend()
-    plt.grid()
-    plt.savefig("artifacts/graph.png")
-"""
