@@ -1,10 +1,12 @@
 #
 #   @file : GenerateFigures.py
-#   @date : 13 April 2024
+#   @date : 14 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
-import matplotlib.pyplot as plt
+import sys
 import csv
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 def generate_graph1():
@@ -67,7 +69,7 @@ def generate_graph2():
     plt.savefig("artifacts/graph2.png")
 
 
-def generate_graph3():
+def generate_graph4():
     x = []
     ys = []
     with open('../experiments/artifacts/experiment4_results.csv', newline='') as csvfile:
@@ -96,7 +98,7 @@ def generate_graph3():
     plt.savefig("artifacts/graph3.png")
 
 
-def generate_graph4():
+def generate_graph3():
     x = []
     ys = []
     with open('artifacts/experiment3.csv', newline='') as csvfile:
@@ -126,15 +128,19 @@ def generate_graph4():
 
 
 if __name__ == "__main__":
-    # generate_graph1()
-    # generate_graph2()
-    # generate_graph3()
-    generate_graph4()
+    FIGURE_ID = None
+    if len(sys.argv) > 1:
+        FIGURE_ID = int(sys.argv[-1])
+    # if FIGURE_ID is None or FIGURE_ID == 1:
+    #     generate_graph1()
+    # if FIGURE_ID is None or FIGURE_ID == 2:
+    #     generate_graph2()
+    if FIGURE_ID is None or FIGURE_ID == 3:
+        generate_graph3()
+    # if FIGURE_ID is None or FIGURE_ID == 4:
+    #     generate_graph4()
 
 """
-# todo: delete
-import matplotlib.pyplot as plt
-
 if __name__ == "__main__":
     x = [100, 200, 300, 400, 500]
 

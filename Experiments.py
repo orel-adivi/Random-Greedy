@@ -1,8 +1,9 @@
 #
 #   @file : Experiments.py
-#   @date : 13 April 2024
+#   @date : 14 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
+import sys
 import time
 import numpy as np
 from tqdm import tqdm
@@ -51,8 +52,8 @@ def run_experiment1() -> None:
         (lambda ln: GreedyCode(length=length), 'GreedyCode'),
         (lambda ln: RepetitionCode(length=ln), 'RepetitionCode'),
         (lambda ln: VTRepetitionCode(length=ln, m=calculate_m_value(ln)), 'VTRepetitionCode'),
-        (lambda ln: VTRepetitionNaryCode(length=ln, m=calculate_m_value(ln), q=4), 'VTRepetitionNaryCode'),
-        (lambda ln: RandomGreedyCode(length=ln, options=2), 'RandomGreedyCode'),
+        (lambda ln: VTRepetitionNaryCode(length=ln, m=calculate_m_value(ln), q=4), 'VTRepetitionNaryCode (4-ary)'),
+        (lambda ln: RandomGreedyCode(length=ln, options=2), 'RandomGreedyCode (2 options)'),
     ]
 
     print(f'=== Performing experiment #1:')
@@ -81,7 +82,7 @@ def run_experiment2() -> None:
          'LogSpaceCode (shorter pattern)'),
         (lambda ln: LogSpaceCode(length=ln, pattern_false='00', pattern_true='11'),
          'LogSpaceCode (longer pattern)'),
-        (lambda ln: RandomGreedyCode(length=ln, options=2), 'RandomGreedyCode'),
+        (lambda ln: RandomGreedyCode(length=ln, options=2), 'RandomGreedyCode (2 options)'),
     ]
 
     print(f'=== Performing experiment #2:')
@@ -132,7 +133,7 @@ def run_experiment3() -> None:
 
 def run_experiment4() -> None:
     """This experiment compares different choices of 'option' parameter for RandomGreedyCode."""
-    lengths = list(range(50, 551, 50))
+    lengths = list(range(50, 351, 50))
     codes = [
         (lambda ln: RandomCode(length=ln), 'RandomCode (1 options)'),
         (lambda ln: RandomGreedyCode(length=ln, options=2), 'RandomGreedyCode (2 options)'),
@@ -159,7 +160,14 @@ def run_experiment4() -> None:
 
 
 if __name__ == '__main__':
-    run_experiment1()
-    run_experiment2()
-    run_experiment3()
-    run_experiment4()
+    EXPERIMENT_ID = None
+    if len(sys.argv) > 1:
+        EXPERIMENT_ID = int(sys.argv[-1])
+    if EXPERIMENT_ID is None or EXPERIMENT_ID == 1:
+        run_experiment1()
+    if EXPERIMENT_ID is None or EXPERIMENT_ID == 2:
+        run_experiment2()
+    if EXPERIMENT_ID is None or EXPERIMENT_ID == 3:
+        run_experiment3()
+    if EXPERIMENT_ID is None or EXPERIMENT_ID == 4:
+        run_experiment4()
