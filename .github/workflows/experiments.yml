@@ -17,7 +17,6 @@ permissions:
 jobs:
   build:
     runs-on: ${{matrix.os}}
-    timeout-minutes: 720
     strategy:
       fail-fast: false
       matrix:
