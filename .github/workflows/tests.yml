@@ -1,6 +1,6 @@
 #
 #   @file : tests.yml
-#   @date : 14 April 2024
+#   @date : 17 April 2024
 #   @authors : Orel Adivi and Daniel Noor
 #
 name: Run all Unittests - Testing
@@ -35,5 +35,5 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
-      - name: Run benchmarks
+      - name: Run unittests
         run: python -m unittest Unittests.py
