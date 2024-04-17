@@ -76,72 +76,87 @@ def generate_figure2() -> None:
     plt.xlabel('Codeword length [bit]')
     plt.ylabel('Maximal number of fixable deletions [bit]')
     plt.xlim([lengths[0], lengths[-1]])
-    plt.ylim([0, 50 * int(np.ceil(max([np.max(arr) for arr in values]) / 50.0))])
+    plt.ylim([0, 25 * int(np.ceil(max([np.max(arr) for arr in values]) / 25.0))])
     plt.xticks(np.arange(lengths[0], lengths[-1] + 1, 50))
-    plt.yticks(np.arange(0, 50 * int(np.ceil(max([np.max(arr) for arr in values]) / 50.0)) + 1, 25))
+    plt.yticks(np.arange(0, 25 * int(np.ceil(max([np.max(arr) for arr in values]) / 25.0)) + 1, 25))
     plt.legend()
     plt.grid()
     plt.savefig(BASE_DIRECTORY + '/figure2.png', format='png', dpi=300)
 
 
-def generate_graph4():
-    return
-    x = []
-    ys = []
-    with open('../experiments/artifacts/experiment4_results.csv', newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-        start = True
+def generate_figure3() -> None:
+    """This function generates a figure for experiment #3."""
+    lengths = []
+    with open(BASE_DIRECTORY + '/experiment3.csv', 'r', newline='') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',')
+        label_line = reader.__next__()
+        assert label_line[0] == 'length'
+        labels = [label[:-12] for label in label_line[1::2]]
+        values = [[] for _ in range(len(labels))]
         for row in reader:
-            row = ','.join(row).split(',')
-            if start:
-                start = False
-                ys = [[] for _ in row][1::4]
-            else:
-                x.append(int(row[0]))
-                values = row[1::2]
-                for y, val in zip(ys, values):
-                    y.append(int(val))
+            lengths.append(int(row[0]))
+            current_values = row[1::2]
+            for i in range(len(current_values)):
+                values[i].append(int(current_values[i]))
 
-    labels = ['2', '3', '4', '5']
-    labels = ['options=' + label for label in labels]
-    for y, label in zip(ys, labels):
-        plt.plot(x, y, label=label)
-    plt.title("RandomGreedyCode with Different Parameters")
-    plt.xlabel("Code Length [bit]")
-    plt.ylabel("Maximum Number of Fixable Deletions [bit]")
+    assert len(labels) == len(values)
+    lengths = np.array(lengths)
+    values = [np.array(arr) for arr in values]
+
+    plt.figure(figsize=(7, 5))
+    plt.plot(lengths, values[0], '--', color='black', label=labels[0])
+    for i in range(1, len(labels)):
+        plt.plot(lengths, values[i], label=labels[i])
+
+    print('=== Generating figure #3... ===')
+    plt.title('Deletion correction capabilities of VTRepetitionCode with different bases')
+    plt.xlabel('Codeword length [bit]')
+    plt.ylabel('Maximal number of fixable deletions [bit]')
+    plt.xlim([lengths[0], lengths[-1]])
+    plt.ylim([0, 5 * int(np.ceil(max([np.max(arr) for arr in values]) / 5.0))])
+    plt.xticks(np.arange(lengths[0], lengths[-1] + 1, 50))
+    plt.yticks(np.arange(0, 5 * int(np.ceil(max([np.max(arr) for arr in values]) / 5.0)) + 1, 5))
     plt.legend()
     plt.grid()
-    plt.savefig("artifacts/graph3.png")
+    plt.savefig(BASE_DIRECTORY + '/figure3.png', format='png', dpi=300)
 
 
-def generate_graph3():
-    return
-    x = []
-    ys = []
-    with open('artifacts/experiment3.csv', newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-        start = True
+def generate_figure4() -> None:
+    """This function generates a figure for experiment #4."""
+    upper_limit = 3
+    lengths = []
+    with open(BASE_DIRECTORY + '/experiment4.csv', 'r', newline='') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',')
+        label_line = reader.__next__()
+        assert label_line[0] == 'length'
+        labels = [label[:-12] for label in label_line[1::2]]
+        values = [[] for _ in range(len(labels))]
         for row in reader:
-            row = ','.join(row).split(',')
-            if start:
-                start = False
-                ys = [[] for _ in row][1::4]
-            else:
-                x.append(int(row[0]))
-                values = row[1::2]
-                for y, val in zip(ys, values):
-                    y.append(int(val))
+            lengths.append(int(row[0]))
+            current_values = row[1::2]
+            for i in range(len(current_values)):
+                values[i].append(int(current_values[i]))
 
-    labels = ['2', '4', '8']
-    labels = ['q=' + label for label in labels]
-    for y, label in zip(ys, labels):
-        plt.plot(x, y, label=label)
-    plt.title("VTRepetitionNaryCode with Different Bases")
-    plt.xlabel("Code Length [bit]")
-    plt.ylabel("Maximum Number of Fixable Deletions [bit]")
-    plt.legend()
+    assert len(labels) == len(values)
+    lengths = np.array(lengths)
+    values = [np.array(arr) for arr in values]
+
+    plt.figure(figsize=(7, 5))
+    plt.plot(lengths, values[0], '--', color='black', label=labels[0])
+    for i in range(1, len(labels)):
+        plt.plot(lengths, values[i], label=labels[i])
+
+    print('=== Generating figure #4... ===')
+    plt.title('Deletion correction capabilities of RandomGreedyCode\nwith different number of options')
+    plt.xlabel('Codeword length [bit]')
+    plt.ylabel('Maximal number of fixable deletions [bit]')
+    plt.xlim([lengths[0], lengths[upper_limit]])
+    plt.ylim([0, 10 * int(np.ceil(max([np.max(arr[0:upper_limit]) for arr in values]) / 10.0))])
+    plt.xticks(np.arange(lengths[0], lengths[upper_limit] + 1, 50))
+    plt.yticks(np.arange(0, 10 * int(np.ceil(max([np.max(arr[0:upper_limit]) for arr in values]) / 10.0)) + 1, 10))
+    plt.legend(loc='upper left')
     plt.grid()
-    plt.savefig("artifacts/graph4.png")
+    plt.savefig(BASE_DIRECTORY + '/figure4.png', format='png', dpi=300)
 
 
 if __name__ == "__main__":
@@ -153,6 +168,6 @@ if __name__ == "__main__":
     if FIGURE_ID is None or FIGURE_ID == 2:
         generate_figure2()
     if FIGURE_ID is None or FIGURE_ID == 3:
-        generate_graph3()
+        generate_figure3()
     if FIGURE_ID is None or FIGURE_ID == 4:
-        generate_graph4()
+        generate_figure4()
