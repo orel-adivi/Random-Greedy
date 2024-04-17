@@ -72,7 +72,7 @@ def generate_figure2() -> None:
     plt.plot(lengths, values[-1], '--', color='black', label=labels[-1])
 
     print('=== Generating figure #2... ===')
-    plt.title('Deletion correction capabilities of codes that generate less codewords than the desired')
+    plt.title('Deletion correction capabilities of codes\nthat generate less codewords than the desired')
     plt.xlabel('Codeword length [bit]')
     plt.ylabel('Maximal number of fixable deletions [bit]')
     plt.xlim([lengths[0], lengths[-1]])
