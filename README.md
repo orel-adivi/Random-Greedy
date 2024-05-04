@@ -2,13 +2,10 @@
 
 [![Run all experiments - Testing](https://github.com/orel-adivi/Random-Greedy/actions/workflows/experiments.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/experiments.yml)
 [![Run all Unittests - Testing](https://github.com/orel-adivi/Random-Greedy/actions/workflows/tests.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/tests.yml)
-[![Check Style (Flake8) - Style](https://github.com/orel-adivi/Random-Greedy/actions/workflows/style.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/style.yml)
 [![Compile LaTeX file - Report](https://github.com/orel-adivi/Random-Greedy/actions/workflows/latex.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/latex.yml)
-[![Vulnerabilities Check (CodeQL) - Security](https://github.com/orel-adivi/Random-Greedy/actions/workflows/vulnerabilities.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/vulnerabilities.yml)
 [![Jekyll Deploy for GitHub Pages - Website](https://github.com/orel-adivi/Random-Greedy/actions/workflows/website.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/website.yml)
 [![GitHub](https://img.shields.io/github/license/orel-adivi/Random-Greedy)](https://github.com/orel-adivi/Random-Greedy/blob/main/LICENSE)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/orel-adivi/Random-Greedy)](https://github.com/orel-adivi/Random-Greedy/releases)
-[![GitHub repo size](https://img.shields.io/github/repo-size/orel-adivi/Random-Greedy)](https://github.com/orel-adivi/Random-Greedy)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Forel-adivi.github.io%2FRandom-Greedy%2F)](https://orel-adivi.github.io/Random-Greedy/)
 
 
