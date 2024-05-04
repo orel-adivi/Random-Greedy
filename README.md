@@ -63,7 +63,7 @@ code by repeating a pattern of alternating $0$-s and $1$-s with a length that in
 code by repeating a pattern of alternating `pattern_false`-s ($0$ is the default) and `pattern_true`-s ($1$ is the
 default) with a length that increases linearly.
 - [`RepetitionCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/RepetitionCode.py) – This class generates code by taking all words of length $log(n)$ and multiplying each letter
-$n/log(n)$ times, giving words of length $n$ (n is the code length).
+$n/log(n)$ times, giving words of length $n$ ($n$ is the code length).
 - [`VTRepetitionCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/VTRepetitionCode.py) – this class generates code by taking all words from $VT_0(m)$ for a given parameter `m` and multiplying each letter $n/m$ times.
 - [`VTRepetitionNaryCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/VTRepetitionNaryCode.py) – this class generates code by taking all words from $VT_0(m, q)$ for given parameters `m` and `q` (`q` is the base), converting the words to binary and multiplying each letter $n/m$ times.
 - [`RandomGreedyCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/RandomGreedyCode.py) – this class generates code in $n$ iterations. In every iteration a group of codeword candidates is randomly generated (group size given by parameter `options`, default is 2 options per iteration) and we take only the candidate with the largest distance from the previous codewords.
