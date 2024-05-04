@@ -2,4 +2,4 @@
 layout: default
 ---
 
-{% include ../favicon.html %}
+{% include favicon.html %}
