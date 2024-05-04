@@ -1,4 +1,4 @@
-# Support for CorSys
+# Support for Random-Greedy
 
 Welcome to Random-Greedy!
 
