@@ -35,7 +35,7 @@ python -m pip install -r requirements.txt
 ```
 
 Then, the codes can be imported, generated and used. For example, for generating `RandomGreedyCode` of length 100 and
-with 2 options for each selection point, and using it, the following code can be used:
+with 2 options for each selection point, and using it, the following `Python` code can be used:
 
 ```python
 import numpy as np
@@ -52,7 +52,28 @@ Other codes can be used similarly, as they share the interface defined in the
 
 ### Codes
 
-todo
+In this project, eight code classes are available:
+
+- [`RandomCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/RandomCode.py) – this class generates code
+by selecting serially random codewords that were not previously chosen.
+- [`GreedyCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/GreedyCode.py) – this class generates code
+selecting codewords to be as different as possible, by flipping bits during a serial traversal of the previously
+- generated codewords.
+- [`LinSpaceCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/LinSpaceCode.py) – this class generates 
+code by repeating a pattern of alternating $0$-s and $1$-s with a length that increases linearly.
+- [`LogSpaceCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/LogSpaceCode.py) – this class generates 
+code by repeating a pattern of alternating `pattern_false`-s ($0$ is the default) and `pattern_true`-s ($1$ is the
+default) with a length that increases linearly.
+- [``]() – this class generates code ???
+- [``]() – this class generates code ???
+- [``]() – this class generates code ???
+- [``]() – this class generates code ???
+
+All these classes are derived from the class
+[`Code`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/Code.py), which provides the methods `encode` (for
+encoding a value), `decode` (for decoding a codeword), and max_deletions (for calculating the maximal number of
+deletions allowed).
+
 
 ### Utilities
 
