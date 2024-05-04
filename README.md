@@ -64,14 +64,19 @@ code by repeating a pattern of alternating $0$-s and $1$-s with a length that in
 - [`LogSpaceCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/LogSpaceCode.py) – this class generates 
 code by repeating a pattern of alternating `pattern_false`-s ($0$ is the default) and `pattern_true`-s ($1$ is the
 default) with a length that increases linearly.
-- [``]() – this class generates code ???
-- [``]() – this class generates code ???
-- [``]() – this class generates code ???
-- [``]() – this class generates code ???
+- [`RepetitionCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/RepetitionCode.py) – this class generates code ???
+- [`VTRepetitionCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/VTRepetitionCode.py) – this class generates code ???
+`m`
+- [`VTRepetitionNaryCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/VTRepetitionNaryCode.py) – this class generates code ???
+`m`
+`q`
+- [`RandomGreedyCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/RandomGreedyCode.py) – this class generates code ???
+`options`
 
 All these classes are derived from the class
-[`Code`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/Code.py), which provides the methods `encode` (for
-encoding a value), `decode` (for decoding a codeword), and max_deletions (for calculating the maximal number of
+[`Code`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/Code.py), which allows the selection of codeword
+length in the construction (with the parameter `length`) and provides the methods `encode` (for encoding a value),
+`decode` (for decoding a codeword), and max_deletions (for calculating the maximal number of
 deletions allowed).
 
 
