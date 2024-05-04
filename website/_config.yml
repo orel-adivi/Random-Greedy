@@ -3,4 +3,4 @@ logo: ./logo.png
 description: Generating and comparing low-rate deletion correcting codes.
 show_downloads: true
 google_analytics:
-theme: jekyll-theme-minimal
+theme: bulma-clean-theme
