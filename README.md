@@ -82,7 +82,7 @@ deletions allowed).
 Additional classes and functions used in the implementation of the different codes:
 
 - [`LevenshteinDistance`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/LevenshteinDistance.py) – contains function that computes Levenshtein deletion distance between an expected string and the measured/received string.
-- [`LongestCommonSubsequence`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/LongestCommonSubsequence.py) – contains a version of LCS we implemented ourselves before switching to using an existing library
+- [`LongestCommonSubsequence`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/LongestCommonSubsequence.py) – contains function that computes the longest common subsequence of two strings. We implemented this function ourselves before switching to using an existing library
 - [`VTCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/VTCode.py) – contains a VT code generator, taken from [`previous work `](https://github.com/shubhamchandak94/VT_codes/)
 
 ## Experiments
