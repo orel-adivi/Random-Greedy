@@ -30,7 +30,6 @@ jobs:
       uses: xu-cheng/latex-action@3.2.0
       with:
         root_file: report.tex
-        working_directory: ./report
 
     - name: Store artifact
       uses: actions/upload-artifact@v4
