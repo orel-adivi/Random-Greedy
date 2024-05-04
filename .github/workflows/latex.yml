@@ -15,5 +15,10 @@ jobs:
     - name: Store pdf
       uses: actions/upload-artifact@v2
       with:
-        name: file.pdf
-        path: file.pdf
+        name: report.pdf
+        path: report.pdf
+    - name: Store pdf1
+      uses: actions/upload-artifact@v2
+      with:
+        name: ./report/report.pdf
+        path: report/report.pdf
