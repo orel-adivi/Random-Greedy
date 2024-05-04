@@ -23,6 +23,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - name: Remove current report
+      run: rm ./report.pdf
+
     - name: Convert LaTeX to pdf
       id: convert-to-pdf
       uses: closoco/pdflatex-action@v1.0.0
@@ -33,8 +36,4 @@ jobs:
       with:
         name: report.pdf
         path: report.pdf
-    - name: Store pdf1
-      uses: actions/upload-artifact@v2
-      with:
-        name: ./report/report.pdf
-        path: report/report.pdf
+

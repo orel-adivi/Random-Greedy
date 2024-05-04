@@ -25,7 +25,7 @@ with meta-parameters) were created, and compared for their deletion correcting a
 substitutions are allowed). The codes are low-rate, so each codeword has $n$ bits in total, and $O(log(n))$ of them are
 information bits. We achieve this by generating the codes with the number of codewords to be equal to the codeword
 length. The full description of the project is available in the
-[project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/main/report/report.pdf).
+[project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/main/report.pdf).
 
 This work is submitted as the final project in the course "Coding and Algorithms for Memories" (236379), at Taub Faculty
 of Computer Science, Technion - Israel Institute of Technology. The project was written by Orel Adivi
@@ -146,7 +146,7 @@ connection between the codeword length and maximal number of fixable deletions, 
 number of options to choose from in each iteration.
 
 The figures are described and discussed in detailed in the
-[project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/main/report/report.pdf).
+[project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/main/report.pdf).
 
 
 ## Project Engineering
