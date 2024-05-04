@@ -23,7 +23,32 @@ is released under MIT license.
 
 ## Usage
 
-todo
+In order to generate the codes and use them, an installation of
+[`CPython 3.10`](https://www.python.org/downloads/release/python-31014/) is required (the implementation is platform
+independent, and was tested on both Windows and Linux).
+
+The project uses `NumPy`, `Matplotlib`, `overrides`, `pylcs`, and `tqdm` Python libraries, which can be installed using
+`Pip` package installer:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Then, the codes can be imported, generated and used. For example, for generating `RandomGreedyCode` of length 100 and
+with 2 options for each selection point, and using it, the following code can be used:
+
+```python
+import numpy as np
+from codes.RandomGreedyCode import RandomGreedyCode
+
+my_code = RandomGreedyCode(length=100, options=2)                   # generate the code
+print(f'Codeword for the value 0:\t{my_code.encode(24)}')           # encode a value
+print(f'Value for a codeword:\t{my_code.decode(np.zeros((100,)))}') # decode a codeword
+print(f'Maximal number of deletions:\t{my_code.max_deletions()}')   # calculate deletion-distance
+```
+
+Other codes can be used similarly, as they share the interface defined in the
+[`Code`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/Code.py) class.
 
 ### Codes
 
