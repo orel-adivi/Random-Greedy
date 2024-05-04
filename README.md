@@ -1,21 +1,20 @@
 # Low-rate Deletion Correcting Code
 
-<!-- tags -->
+[![Run all experiments - Testing](https://github.com/orel-adivi/Random-Greedy/actions/workflows/experiments.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/experiments.yml)
+[![Run all Unittests - Testing](https://github.com/orel-adivi/Random-Greedy/actions/workflows/tests.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/tests.yml)
+[![Check Style (Flake8) - Style](https://github.com/orel-adivi/Random-Greedy/actions/workflows/style.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/style.yml)
+[![Compile LaTeX file - Report](https://github.com/orel-adivi/Random-Greedy/actions/workflows/latex.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/latex.yml)
+[![Vulnerabilities Check (CodeQL) - Security](https://github.com/orel-adivi/Random-Greedy/actions/workflows/vulnerabilities.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/vulnerabilities.yml)
+[![Jekyll Deploy for GitHub Pages - Website](https://github.com/orel-adivi/Random-Greedy/actions/workflows/website.yml/badge.svg)](https://github.com/orel-adivi/Random-Greedy/actions/workflows/website.yml)
+[![GitHub](https://img.shields.io/github/license/orel-adivi/Random-Greedy)](https://github.com/orel-adivi/Random-Greedy/blob/main/LICENSE)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/orel-adivi/Random-Greedy)](https://github.com/orel-adivi/Random-Greedy/releases)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Forel-adivi.github.io%2FRandom-Greedy%2F)](https://orel-adivi.github.io/Random-Greedy/)
+
+
 <!--
-[![Sanity Check - Build](https://github.com/orel-adivi/CorSys/actions/workflows/build.yml/badge.svg)](https://github.com/orel-adivi/CorSys/actions/workflows/build.yml)
-[![Run all Benchmarks - Testing](https://github.com/orel-adivi/CorSys/actions/workflows/benchmarks.yml/badge.svg)](https://github.com/orel-adivi/CorSys/actions/workflows/benchmarks.yml)
-[![Check Style (Flake8) - Style](https://github.com/orel-adivi/CorSys/actions/workflows/style.yml/badge.svg)](https://github.com/orel-adivi/CorSys/actions/workflows/style.yml)
-[![Vulnerabilities Check (CodeQL) - Security](https://github.com/orel-adivi/CorSys/actions/workflows/vulnerabilities.yml/badge.svg)](https://github.com/orel-adivi/CorSys/actions/workflows/vulnerabilities.yml)
-[![GitHub](https://img.shields.io/github/license/orel-adivi/CorSYs)](https://github.com/orel-adivi/CorSys/blob/main/LICENSE)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/orel-adivi/CorSys)](https://github.com/orel-adivi/CorSys/releases)
 [![GitHub all releases](https://img.shields.io/github/downloads/orel-adivi/CorSys/total)](https://github.com/orel-adivi/CorSys/releases)
 [![GitHub repo size](https://img.shields.io/github/repo-size/orel-adivi/CorSys)](https://github.com/orel-adivi/CorSys)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Forel-adivi.github.io%2FCorSys%2F)](https://orel-adivi.github.io/CorSys/)
 
-[![Deploy for GitHub Pages - Website](https://github.com/CodingBlocks5/PuppetBlocks/actions/workflows/website.yml/badge.svg)](https://github.com/CodingBlocks5/PuppetBlocks/actions/workflows/website.yml)
-[![Vulnerabilities Check (CodeQL) - Security](https://github.com/CodingBlocks5/PuppetBlocks/actions/workflows/vulnerabilities.yml/badge.svg)](https://github.com/CodingBlocks5/PuppetBlocks/actions/workflows/vulnerabilities.yml)
-[![GitHub](https://img.shields.io/github/license/CodingBlocks5/PuppetBlocks)](https://github.com/CodingBlocks5/PuppetBlocks/blob/main/LICENSE)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/CodingBlocks5/PuppetBlocks)](https://github.com/CodingBlocks5/PuppetBlocks/releases)
 [![GitHub repo size](https://img.shields.io/github/repo-size/CodingBlocks5/PuppetBlocks)](https://github.com/CodingBlocks5/PuppetBlocks)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fcodingblocks5.github.io%2FPuppetBlocks%2F)](https://codingblocks5.github.io/PuppetBlocks/)
 -->
@@ -69,6 +68,7 @@ print(f'Maximal number of deletions:\t{my_code.max_deletions()}')   # calculate 
 
 Other codes can be used similarly, as they share the interface defined in the
 [`Code`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/Code.py) class.
+
 
 ### Codes
 
