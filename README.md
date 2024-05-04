@@ -9,7 +9,9 @@
 This short name is also the name of out main artifact, a simple algorithm that provides better deletion correcting
 abilities, compared to other codes we checked. In the project, eight methodologies for generating codes (some of them
 with meta-parameters) were created, and compared for their deletion correcting abilities (so no insertions nor
-substitutions are allowed). The codes are low-rate, so each codeword has $n$ bits total and of them $O(log(n))$ are information bits. We achieve this by generating the codes with the number of codewords to be equal to the codeword length. The full description of the project is available in the
+substitutions are allowed). The codes are low-rate, so each codeword has $n$ bits in total, and $O(log(n))$ of them are
+information bits. We achieve this by generating the codes with the number of codewords to be equal to the codeword
+length. The full description of the project is available in the
 [project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/master/report/report.pdf).
 
 This work is submitted as the final project in the course "Coding and Algorithms for Memories" (236379), at Taub Faculty
@@ -85,7 +87,42 @@ Additional classes and functions used in the implementation of the different cod
 
 ## Experiments
 
-todo
+In order to compare the different code generation methodologies, and to tune meta-parameters for the relevant codes, we
+wrote a `Python` script that runs these experiments, and another `Python` script that generates the figures from these
+experiments. For running the two files, the following script can be executed:
+
+```bash
+python Experiments.py
+python GenerateFigures.py
+```
+
+Running the experiments is expected to last several hours, so we also run this script in a
+[GitHub action](https://github.com/orel-adivi/Random-Greedy/actions/workflows/tests.yml). Additionally, the results are
+available in the [`artifacts`](https://github.com/orel-adivi/Random-Greedy/tree/main/artifacts) folder. Additionally,
+for testing the [`util`](https://github.com/orel-adivi/Random-Greedy/tree/main/utils) files folder, we wrote a test file
+that can be executed using the following command:
+
+```bash
+python -m unittest Unittests.py
+```
+
+In the execution of the first two files, the following figures are generated:
+
+- **[Figure 1](https://github.com/orel-adivi/Random-Greedy/blob/main/artifacts/figure1.png)** – this figure shows the
+connection between the codeword length and maximal number of fixable deletions, for different codes.
+- **[Figure 2](https://github.com/orel-adivi/Random-Greedy/blob/main/artifacts/figure2.png)** – this figure shows the
+connection between the codeword length and maximal number of fixable deletions, for codes that can not generate the
+desired number of codewords.
+- **[Figure 3](https://github.com/orel-adivi/Random-Greedy/blob/main/artifacts/figure3.png)** – this figure shows the
+connection between the codeword length and maximal number of fixable deletions, for `VTRepetitionNaryCode` in different
+bases.
+- **[Figure 4](https://github.com/orel-adivi/Random-Greedy/blob/main/artifacts/figure4.png)** – this figure shows the
+connection between the codeword length and maximal number of fixable deletions, for `RandomGreedyCode` with different
+number of options to choose from in each iteration.
+
+The figures are described and discussed in detailed in the
+[project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/master/report/report.pdf).
+
 
 ## Project Engineering
 
