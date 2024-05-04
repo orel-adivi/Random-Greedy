@@ -160,12 +160,11 @@ The figures are described and discussed in detailed in the
 
 ### Design and Development
 
-The project was designed in accordance with the object-oriented programming (OOP) principles. The project was written
+The project was designed in accordance with the object-oriented programming (OOP) principles. For documentation, a
+[website](https://orel-adivi.github.io/Random-Greedy/) was created and a
+[SUPPORT.md](https://github.com/orel-adivi/Random-Greedy/blob/main/SUPPORT.md) file was written. The project was written
 using PyCharm Professional and was managed using [GitHub](https://github.com/orel-adivi/Random-Greedy).
 
-<!-- For documentation, a
-[website](https://orel-adivi.github.io/Random-Greedy/) is available and a
-[SUPPORT.md](https://github.com/orel-adivi/Random-Greedy/blob/main/SUPPORT.md) file was written. -->
 
 ### Continuous Integration
 
