@@ -1,13 +1,29 @@
-on: [push]
+#
+#   @file : latex.yml
+#   @date : 05 May 2024
+#   @authors : Orel Adivi and Daniel Noor
+#
+name: Generate LaTex file - Report
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
 
 jobs:
-  build-resume:
+  build:
     runs-on: ubuntu-latest
-    name: Create document
+    name: Build PDF
+
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
-    - name: Convert to pdf
+      uses: actions/checkout@v4
+
+    - name: Convert LaTeX to pdf
       id: convert-to-pdf
       uses: closoco/pdflatex-action@v1.0.0
       with:
