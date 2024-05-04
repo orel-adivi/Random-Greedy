@@ -8,14 +8,6 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/orel-adivi/Random-Greedy)](https://github.com/orel-adivi/Random-Greedy/releases)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Forel-adivi.github.io%2FRandom-Greedy%2F)](https://orel-adivi.github.io/Random-Greedy/)
 
-
-
-<!--
-
-[![GitHub repo size](https://img.shields.io/github/repo-size/CodingBlocks5/PuppetBlocks)](https://github.com/CodingBlocks5/PuppetBlocks)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fcodingblocks5.github.io%2FPuppetBlocks%2F)](https://codingblocks5.github.io/PuppetBlocks/)
--->
-
 [![logo](https://raw.githubusercontent.com/orel-adivi/Random-Greedy/main/website/logo.png)](https://github.com/orel-adivi/Random-Greedy)
 
 
