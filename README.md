@@ -1,15 +1,44 @@
-# CAM_Project
+# Low-rate Deletion Correcting Code
 
-Link to paper: https://ieeexplore.ieee.org/abstract/document/9954058?casa_token=fyixySEJF_EAAAAA:Rzo6GWpdc5dvKL-UjuqQn9eDh0XFK5jzQE0O0CG8I_gCW1LSPc_wvaZHC2iGgw3EL9TglSlWlzBWd1w  
+<!-- tags -->
+<!-- logo -->
 
-DONE:  
-* Created random code generator, for n=100 it seems to be able to handle no more than 18/19 deletions
-* Created a simple greedy xor-based code generator, for n=100 it yields worse results than the random code (14 deletions)  
-* Created a greedy random generator which chooses the best from a few random options each iteration. Even after adjusting
-the number of options, the results seem to be the same as the regular random generator
-* Created a code generator which creates words from increasing runs of 0's and 1's (as well as the all-0 and all-1 words)
-* Improved the previous generator with np.logspace, seems to allow n/4 deletions
+## About the Project
 
-TODO:
-* Go over the relevant parts in the given paper  
-* Create more generators
+"Random-Greedy" is the short name for this project, aiming to generate and compare low-rate deletion correcting codes.
+This short name is also the name of out main artifact, a simple algorithm that provides better deletion correcting
+abilities, compared to other codes we checked. In the project, eight methodologies for generating codes (some of them
+with meta-parameters) were created, and compared for their deletion correcting abilities (so no insertions nor
+substitutions are allowed). The codes are low-rate, so the number of codewords generated for each code is in
+$O(log(n))$ for $n$ to be the maximal possible code space. Specifically, we generated the codes with the number of
+codewords to be equal to the codeword length. The full description of the project is available in the
+[project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/master/report/report.pdf).
+
+This work is submitted as the final project in the course "Coding and Algorithms for Memories" (236379), at Taub Faculty
+of Computer Science, Technion - Israel Institute of Technology. The project was written by Orel Adivi
+`(orel.adivi [at] cs.technion.ac.il)` and Daniel Noor `(daniel.noor [at] cs.technion.ac.il)`, and under the supervision
+of Daniella Bar-Lev and associate professor Eitan Yaakobi. The work was done in semester winter 2022-2023. The project
+is released under MIT license.
+
+
+## Usage
+
+todo
+
+### Codes
+
+todo
+
+### Utilities
+
+todo
+
+## Experiments
+
+todo
+
+## Project Engineering
+
+todo
+
+Please feel free to contact us with any questions you have about this project.
