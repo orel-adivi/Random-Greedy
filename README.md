@@ -91,7 +91,8 @@ used in the implementation of the different codes, are provided:
 - [`LevenshteinDistance.py`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/LevenshteinDistance.py) – this
 file contains a function that computes Levenshtein deletion distance between an expected string and a given string.
 - [`LongestCommonSubsequence.py`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/LongestCommonSubsequence.py) – 
-contains a version of LCS we implemented ourselves before switching to using an existing library
+contains a function that computes the length of the longest common subsequence of given two strings (the function uses a
+dynamic programming algorithm, and was replaced with the implementation in `pylcs`).
 - [`VTCode.py`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/VTCode.py) – contains a VT code generator,
 based on an implementation from a [`previous work`](https://github.com/shubhamchandak94/VT_codes/).
 
