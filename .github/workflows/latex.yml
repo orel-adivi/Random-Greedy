@@ -11,7 +11,7 @@ jobs:
       id: convert-to-pdf
       uses: closoco/pdflatex-action@v1.0.0
       with:
-        texFile: ./report/file.tex
+        texFile: ./report/report.tex
     - name: Store pdf
       uses: actions/upload-artifact@v2
       with:
