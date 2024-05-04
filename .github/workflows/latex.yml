@@ -27,13 +27,12 @@ jobs:
       run: rm ./report.pdf
 
     - name: Convert LaTeX to pdf
-      id: convert-to-pdf
-      uses: closoco/pdflatex-action@v1.0.0
+      uses: xu-cheng/latex-action@3.2.0
       with:
-        texFile: ./report/report.tex
+        root_file: report/report.tex
+
     - name: Store pdf
       uses: actions/upload-artifact@v2
       with:
-        name: report.pdf
+        name: Report PDF file
         path: report.pdf
-
