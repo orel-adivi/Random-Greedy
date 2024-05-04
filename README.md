@@ -11,9 +11,16 @@
 [![GitHub all releases](https://img.shields.io/github/downloads/orel-adivi/CorSys/total)](https://github.com/orel-adivi/CorSys/releases)
 [![GitHub repo size](https://img.shields.io/github/repo-size/orel-adivi/CorSys)](https://github.com/orel-adivi/CorSys)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Forel-adivi.github.io%2FCorSys%2F)](https://orel-adivi.github.io/CorSys/)
+
+[![Deploy for GitHub Pages - Website](https://github.com/CodingBlocks5/PuppetBlocks/actions/workflows/website.yml/badge.svg)](https://github.com/CodingBlocks5/PuppetBlocks/actions/workflows/website.yml)
+[![Vulnerabilities Check (CodeQL) - Security](https://github.com/CodingBlocks5/PuppetBlocks/actions/workflows/vulnerabilities.yml/badge.svg)](https://github.com/CodingBlocks5/PuppetBlocks/actions/workflows/vulnerabilities.yml)
+[![GitHub](https://img.shields.io/github/license/CodingBlocks5/PuppetBlocks)](https://github.com/CodingBlocks5/PuppetBlocks/blob/main/LICENSE)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/CodingBlocks5/PuppetBlocks)](https://github.com/CodingBlocks5/PuppetBlocks/releases)
+[![GitHub repo size](https://img.shields.io/github/repo-size/CodingBlocks5/PuppetBlocks)](https://github.com/CodingBlocks5/PuppetBlocks)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fcodingblocks5.github.io%2FPuppetBlocks%2F)](https://codingblocks5.github.io/PuppetBlocks/)
 -->
 
-[![logo](/website/logo.png)](https://github.com/orel-adivi/Random-Greedy)
+[![logo](https://raw.githubusercontent.com/orel-adivi/Random-Greedy/main/website/logo.png)](https://github.com/orel-adivi/Random-Greedy)
 
 
 ## About the Project
@@ -171,20 +178,18 @@ runs all the experiments and generates the related figures.
 the unittests for the [`utils`](https://github.com/orel-adivi/Random-Greedy/tree/main/utils) folder files.
 3) **[Style check](https://github.com/orel-adivi/Random-Greedy/actions/workflows/style.yml)** - this action performs
 basic checks of the `Python` files for detecting syntax errors.
-4) **[Vulnerability check](https://github.com/orel-adivi/Random-Greedy/actions/workflows/vulnerabilities.yml)** - this
+4) **[Compile report](https://github.com/orel-adivi/Random-Greedy/actions/workflows/latex.yml)** - this action compiles
+the [LaTeX file](https://github.com/orel-adivi/Random-Greedy/blob/main/report/report.tex) to the
+[PDF report file](https://github.com/orel-adivi/Random-Greedy/blob/main/report.pdf).
+5) **[Website](https://github.com/orel-adivi/Random-Greedy/actions/workflows/website.yml)** - this action updates the
+[Random-Greedy website](https://orel-adivi.github.io/Random-Greedy/) with the content of this
+[`README.md`](https://github.com/orel-adivi/Random-Greedy/blob/main/README.md) file.
+6) **[Vulnerability check](https://github.com/orel-adivi/Random-Greedy/actions/workflows/vulnerabilities.yml)** - this
 action help managing the `Python` code and its dependencies.
-5) **[Dependency review](https://github.com/orel-adivi/Random-Greedy/actions/workflows/dependency-review.yml)** - this
+7) **[Dependency review](https://github.com/orel-adivi/Random-Greedy/actions/workflows/dependency-review.yml)** - this
 action help managing the `Python` code dependencies for pushes.
-6) **[Dependabot](https://github.com/orel-adivi/Random-Greedy/blob/main/.github/dependabot.yml)** - this action helps
+8) **[Dependabot](https://github.com/orel-adivi/Random-Greedy/blob/main/.github/dependabot.yml)** - this action helps
 update the versions of the dependencies.
-
-<!--
-website
-latex
-
-6) **[Website]()** - the
-[Random-Greedy website](https://orel-adivi.github.io/Random-Greedy/) is updated with the current information.
--->
 
 For the relevant actions, the checks were run in all the supported Python version `CPython 3.10` and on both Windows
 (Windows Server 2022) and Linux (Ubuntu 20.04).
