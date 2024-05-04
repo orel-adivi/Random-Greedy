@@ -9,9 +9,7 @@
 This short name is also the name of out main artifact, a simple algorithm that provides better deletion correcting
 abilities, compared to other codes we checked. In the project, eight methodologies for generating codes (some of them
 with meta-parameters) were created, and compared for their deletion correcting abilities (so no insertions nor
-substitutions are allowed). The codes are low-rate, so the number of codewords generated for each code is in
-$O(log(n))$ for $n$ to be the maximal possible code space. Specifically, we generated the codes with the number of
-codewords to be equal to the codeword length. The full description of the project is available in the
+substitutions are allowed). The codes are low-rate, so each codeword has $n$ bits total and of them $O(log(n))$ are information bits. We achieve this by generating the codes with the number of codewords to be equal to the codeword length. The full description of the project is available in the
 [project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/master/report/report.pdf).
 
 This work is submitted as the final project in the course "Coding and Algorithms for Memories" (236379), at Taub Faculty
