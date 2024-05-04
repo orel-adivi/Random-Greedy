@@ -110,8 +110,8 @@ python GenerateFigures.py
 
 Running the experiments is expected to last several hours, so we also run this script in a
 [GitHub action](https://github.com/orel-adivi/Random-Greedy/actions/workflows/tests.yml). Additionally, the results are
-available in the [`artifacts`](https://github.com/orel-adivi/Random-Greedy/tree/main/artifacts) folder. Additionally,
-for testing the [`utils`](https://github.com/orel-adivi/Random-Greedy/tree/main/utils) files folder, we wrote a test file
+available in the [`artifacts`](https://github.com/orel-adivi/Random-Greedy/tree/main/artifacts) folder. Furthermore,
+for testing the [`utils`](https://github.com/orel-adivi/Random-Greedy/tree/main/utils) folder files, we wrote a test file
 that can be executed using the following command:
 
 ```bash
@@ -138,6 +138,43 @@ The figures are described and discussed in detailed in the
 
 ## Project Engineering
 
-todo
+### Design and Development
+
+The project was designed in accordance with the object-oriented programming (OOP) principles. The project was written
+using PyCharm Professional and was managed using [GitHub](https://github.com/orel-adivi/Random-Greedy).
+
+<!-- For documentation, a
+[website](https://orel-adivi.github.io/Random-Greedy/) is available and a
+[SUPPORT.md](https://github.com/orel-adivi/Random-Greedy/blob/main/SUPPORT.md) file was written. -->
+
+### Continuous Integration
+
+In order to ensure the correctness of commits sent to the GitHub server, a continuous integration pipeline was set.
+These checks are run automatically for each pull request and each push. The following actions were set:
+
+1) **[Run experiments](https://github.com/orel-adivi/Random-Greedy/actions/workflows/experiments.yml)** - this action
+runs all the experiments and generates the related figures.
+2) **[Run unittests](https://github.com/orel-adivi/Random-Greedy/actions/workflows/tests.yml)** - this action runs all
+the unittests for the [`utils`](https://github.com/orel-adivi/Random-Greedy/tree/main/utils) folder files.
+3) **[Style check](https://github.com/orel-adivi/Random-Greedy/actions/workflows/style.yml)** - this action performs
+basic checks of the `Python` files for detecting syntax errors.
+4) **[Vulnerability check](https://github.com/orel-adivi/Random-Greedy/actions/workflows/vulnerabilities.yml)** - this
+action help managing the `Python` code and its dependencies.
+5) **[Dependency review](https://github.com/orel-adivi/Random-Greedy/actions/workflows/dependency-review.yml)** - this
+action help managing the `Python` code dependencies for pushes.
+6) **[Dependabot](https://github.com/orel-adivi/Random-Greedy/blob/main/.github/dependabot.yml)** - this action helps
+update the versions of the dependencies.
+
+<!--
+website
+latex
+
+6) **[Website]()** - the
+[Random-Greedy website](https://orel-adivi.github.io/Random-Greedy/) is updated with the current information.
+-->
+
+For the relevant actions, the checks were run in all the supported Python version `CPython 3.10` and on both Windows
+(Windows Server 2022) and Linux (Ubuntu 20.04).
+
 
 Please feel free to contact us with any questions you have about this project.
