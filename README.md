@@ -12,7 +12,7 @@ with meta-parameters) were created, and compared for their deletion correcting a
 substitutions are allowed). The codes are low-rate, so each codeword has $n$ bits in total, and $O(log(n))$ of them are
 information bits. We achieve this by generating the codes with the number of codewords to be equal to the codeword
 length. The full description of the project is available in the
-[project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/master/report/report.pdf).
+[project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/main/report/report.pdf).
 
 This work is submitted as the final project in the course "Coding and Algorithms for Memories" (236379), at Taub Faculty
 of Computer Science, Technion - Israel Institute of Technology. The project was written by Orel Adivi
@@ -64,11 +64,17 @@ code by repeating a pattern of alternating $0$-s and $1$-s with a length that in
 - [`LogSpaceCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/LogSpaceCode.py) – this class generates 
 code by repeating a pattern of alternating `pattern_false`-s ($0$ is the default) and `pattern_true`-s ($1$ is the
 default) with a length that increases linearly.
-- [`RepetitionCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/RepetitionCode.py) – This class generates code by taking all words of length $log(n)$ and multiplying each letter
-$n/log(n)$ times, giving words of length $n$ ($n$ is the code length).
-- [`VTRepetitionCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/VTRepetitionCode.py) – this class generates code by taking all words from $VT_0(m)$ for a given parameter `m` and multiplying each letter $n/m$ times.
-- [`VTRepetitionNaryCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/VTRepetitionNaryCode.py) – this class generates code by taking all words from $VT_0(m, q)$ for given parameters `m` and `q` (`q` is the base), converting the words to binary and multiplying each letter $n/m$ times.
-- [`RandomGreedyCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/RandomGreedyCode.py) – this class generates code in $n$ iterations. In every iteration a group of codeword candidates is randomly generated (group size given by parameter `options`, default is 2 options per iteration) and we take only the candidate with the largest distance from the previous codewords.
+- [`RepetitionCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/RepetitionCode.py) – This class
+generates code by taking all words of length $log(n)$ for $n$ the codeword length, and repeating each letter $n/log(n)$
+times, thus generating codewords of length $n$.
+- [`VTRepetitionCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/VTRepetitionCode.py) – this class
+generates code by taking all words from $VT_0(m)$ for a given parameter `m` and multiplying each letter $n/m$ times.
+- [`VTRepetitionNaryCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/VTRepetitionNaryCode.py) – this
+class generates code by taking all words from $VT_0(m, q)$ for given parameter `m` and a base `q`, converting the words
+to binary and multiplying each letter $n/m$ times.
+- [`RandomGreedyCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/RandomGreedyCode.py) – this class
+generates code serially by generating a set of codeword candidates of size `options`, and then selecting the candidate
+with the largest distance from the previous codewords.
 
 All these classes are derived from the class
 [`Code`](https://github.com/orel-adivi/Random-Greedy/blob/main/codes/Code.py), which allows the selection of codeword
@@ -79,11 +85,16 @@ deletions allowed).
 
 ### Utilities
 
-Additional classes and functions used in the implementation of the different codes:
+In the [`utils`](https://github.com/orel-adivi/Random-Greedy/tree/main/utils) folder, additional classes and functions,
+used in the implementation of the different codes, are provided:
 
-- [`LevenshteinDistance`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/LevenshteinDistance.py) – contains function that computes Levenshtein deletion distance between an expected string and the measured/received string.
-- [`LongestCommonSubsequence`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/LongestCommonSubsequence.py) – contains function that computes the longest common subsequence of two strings. We implemented this function ourselves before switching to using an existing library
-- [`VTCode`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/VTCode.py) – contains a VT code generator, taken from [`previous work `](https://github.com/shubhamchandak94/VT_codes/)
+- [`LevenshteinDistance.py`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/LevenshteinDistance.py) – this
+file contains a function that computes Levenshtein deletion distance between an expected string and a given string.
+- [`LongestCommonSubsequence.py`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/LongestCommonSubsequence.py) – 
+contains a version of LCS we implemented ourselves before switching to using an existing library
+- [`VTCode.py`](https://github.com/orel-adivi/Random-Greedy/blob/main/utils/VTCode.py) – contains a VT code generator,
+based on an implementation from a [`previous work`](https://github.com/shubhamchandak94/VT_codes/).
+
 
 ## Experiments
 
@@ -99,7 +110,7 @@ python GenerateFigures.py
 Running the experiments is expected to last several hours, so we also run this script in a
 [GitHub action](https://github.com/orel-adivi/Random-Greedy/actions/workflows/tests.yml). Additionally, the results are
 available in the [`artifacts`](https://github.com/orel-adivi/Random-Greedy/tree/main/artifacts) folder. Additionally,
-for testing the [`util`](https://github.com/orel-adivi/Random-Greedy/tree/main/utils) files folder, we wrote a test file
+for testing the [`utils`](https://github.com/orel-adivi/Random-Greedy/tree/main/utils) files folder, we wrote a test file
 that can be executed using the following command:
 
 ```bash
@@ -121,7 +132,7 @@ connection between the codeword length and maximal number of fixable deletions, 
 number of options to choose from in each iteration.
 
 The figures are described and discussed in detailed in the
-[project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/master/report/report.pdf).
+[project report PDF file](https://github.com/orel-adivi/Random-Greedy/blob/main/report/report.pdf).
 
 
 ## Project Engineering
